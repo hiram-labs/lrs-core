@@ -1,0 +1,14 @@
+version: '3.6'
+
+services:
+  mongo:
+    container_name: ll_mongo
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - 27017:27017
+
+  redis:
+    container_name: ll_redis
+    image: redis:latest
+    ports:
+      - 6379:6379
