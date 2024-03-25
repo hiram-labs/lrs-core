@@ -10,7 +10,7 @@ const CLEAR_MODELS_CACHE = 'learninglocker/pagination/CLEAR_MODELS_CACHE';
 const clearCachedAtRecursive = (state) => {
   if (!Iterable.isIterable(state)) return state;
   if (state.has('cachedAt')) {
-    return state.set('cachedAt', moment(0)).map(clearCachedAtRecursive);
+    return state.set('cachedAt', moment(0).utc()).map(clearCachedAtRecursive);
   }
   return state.map(clearCachedAtRecursive);
 };
@@ -18,7 +18,7 @@ const clearCachedAtRecursive = (state) => {
 const clearCountCachedAtRecursive = (state) => {
   if (!Iterable.isIterable(state)) return state;
   if (state.has('countCachedAt')) {
-    return state.set('countCachedAt', moment(0)).map(clearCountCachedAtRecursive);
+    return state.set('countCachedAt', moment(0).utc()).map(clearCountCachedAtRecursive);
   }
   return state.map(clearCountCachedAtRecursive);
 };

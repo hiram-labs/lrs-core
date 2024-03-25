@@ -48,9 +48,9 @@ class TempCriterion extends Component {
    * @param {*} - argument of onChange in components/Material/DatePicker
    */
   onChangeDate = (value) => {
-    const yyyymmdd = moment(value).format('YYYY-MM-DD');
+    const yyyymmdd = moment(value).utc().format('YYYY-MM-DD');
     const timezone = toTimezone(this.props.timezone || this.props.orgTimezone);
-    const z = moment(yyyymmdd).tz(timezone).format('Z');
+    const z = moment(yyyymmdd).utc().tz(timezone).format('Z');
     const datetimeString = `${yyyymmdd}T00:00${z}`;
 
     const key = this.getKey();

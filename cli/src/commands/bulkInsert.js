@@ -246,9 +246,9 @@ function sendBatch(remaining, actors, verbs, objects, startDate, endDate) {
     nextRemaining > 0
       ? sendBatch.bind(null, nextRemaining, actors, verbs, objects, startDate, endDate)
       : () => {
-        logger.info('DONE!');
-        process.exit();
-      };
+          logger.info('DONE!');
+          process.exit();
+        };
   sendStatements(thisBatchSize, actors, verbs, objects, callback, startDate, endDate);
 }
 
@@ -269,8 +269,8 @@ export default function (host, user, pwd, total, batchSize) {
     process.exit();
   }
 
-  const startDate = moment().subtract(3, 'months');
-  const endDate = moment();
+  const startDate = moment().utc().subtract(3, 'months');
+  const endDate = moment().utc();
 
   sendBatch(total, actors, verbs, objects, startDate.unix(), endDate.unix());
 }

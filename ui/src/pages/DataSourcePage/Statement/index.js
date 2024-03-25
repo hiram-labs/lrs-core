@@ -74,7 +74,7 @@ class Statement extends Component {
   };
 
   render = () => {
-    const timestamp = moment(this.getInStatement(new List(['statement', 'timestamp'])));
+    const timestamp = moment(this.getInStatement(new List(['statement', 'timestamp']))).utc();
 
     return (
       <span>

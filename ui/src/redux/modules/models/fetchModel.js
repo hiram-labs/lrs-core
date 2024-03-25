@@ -16,7 +16,7 @@ const modelRequestStateSelector = ({ schema, id }) =>
   createSelector([(state) => state.models], (model) => model.getIn([schema, id, 'requestState'], false));
 
 const cachedAtSelector = ({ schema, id }) =>
-  createSelector([(state) => state.models], (models) => models.getIn([schema, id, 'cachedAt'], moment(0)));
+  createSelector([(state) => state.models], (models) => models.getIn([schema, id, 'cachedAt'], moment(0).utc()));
 
 const shouldFetchModelSelector = ({ schema, id, force }) =>
   createSelector(
@@ -30,7 +30,7 @@ const shouldFetchModelSelector = ({ schema, id, force }) =>
       if (force) return true;
       if (!schema || !id) return false;
       if (requestState === IN_PROGRESS || requestState === FAILED) return false;
-      const cachedFor = moment().diff(cachedAt);
+      const cachedFor = moment().utc().diff(cachedAt);
       if (cachedFor < cacheDuration.asMilliseconds()) return false;
       if (model.has('_id')) return false;
       return true;
@@ -50,11 +50,11 @@ const fetchModel = createAsyncDuck({
   },
   reduceSuccess: (state, action) => {
     const { schema, id } = action;
-    return state.setIn([schema, id, 'cachedAt'], moment()).setIn([schema, id, 'requestState'], COMPLETED);
+    return state.setIn([schema, id, 'cachedAt'], moment().utc()).setIn([schema, id, 'requestState'], COMPLETED);
   },
   reduceFailure: (state, action) => {
     const { schema, id } = action;
-    return state.setIn([schema, id, 'requestState'], FAILED).setIn([schema, id, 'cachedAt'], moment());
+    return state.setIn([schema, id, 'requestState'], FAILED).setIn([schema, id, 'cachedAt'], moment().utc());
   },
   reduceComplete: (state, action) => {
     const { schema, id } = action;

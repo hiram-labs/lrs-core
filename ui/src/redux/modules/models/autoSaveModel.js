@@ -14,7 +14,7 @@ export const PURGE_SAVE_QUEUE = 'learninglocker/models/PURGE_SAVE_QUEUE';
 /**
  * REDUCERS
  */
-const reduceAddToSaveQueue = (state, { schema, id }) => state.setIn(['saveQueue', schema, id], moment());
+const reduceAddToSaveQueue = (state, { schema, id }) => state.setIn(['saveQueue', schema, id], moment().utc());
 
 const reduceRemoveFromSaveQueue = (state, { schema, id }) => state.deleteIn(['saveQueue', schema, id]);
 

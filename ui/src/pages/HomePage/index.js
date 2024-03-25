@@ -85,7 +85,7 @@ class Home extends Component {
     if (
       !this.props.isSiteAdmin &&
       organisation.get('expiration') &&
-      moment(organisation.get('expiration')).isBefore(moment())
+      moment(organisation.get('expiration')).utc().isBefore(moment().utc())
     ) {
       return;
     }
@@ -121,7 +121,7 @@ class Home extends Component {
       const name = organisation.get('name');
 
       const rightActions = [];
-      if (organisation.get('expiration') && moment(organisation.get('expiration')).isBefore(moment())) {
+      if (organisation.get('expiration') && moment(organisation.get('expiration')).utc().isBefore(moment().utc())) {
         rightActions.push(
           <span key="expired" style={{ color: 'red' }}>
             Expired

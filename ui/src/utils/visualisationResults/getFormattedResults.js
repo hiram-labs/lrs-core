@@ -28,7 +28,7 @@ const getDateRange = (results) => {
   results.forEach((series) => {
     series.forEach((entries) => {
       entries.forEach((entry) => {
-        const entryDate = moment(entry.get('_id'));
+        const entryDate = moment(entry.get('_id')).utc();
         minDate = minDate ? moment.min(minDate, entryDate) : entryDate;
         maxDate = maxDate ? moment.max(maxDate, entryDate) : entryDate;
       });

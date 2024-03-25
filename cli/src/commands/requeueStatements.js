@@ -6,13 +6,9 @@ import highland from 'highland';
 import moment from 'moment';
 
 export default function (lrsId, options) {
-  const since = (options.since && moment(new Date(options.since))) || false;
+  const since = (options.since && moment(new Date(options.since)).utc()) || false;
 
-  const query = lrsId
-    ? {
-        lrs_id: lrsId
-      }
-    : {};
+  const query = lrsId ? { lrs_id: lrsId } : {};
 
   if (since && since.isValid()) {
     // apply a constraint on stored

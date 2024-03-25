@@ -27,7 +27,7 @@ class AttemptCell extends Component {
         {completions
           .map((attempt, index) => (
             <option key={index} value={index}>
-              {moment(attempt.get('completedAt')).format('ddd DD MMM YYYY h:mm:ss')}
+              {moment(attempt.get('completedAt')).utc().format('ddd DD MMM YYYY h:mm:ss')}
             </option>
           ))
           .valueSeq()}
@@ -37,12 +37,13 @@ class AttemptCell extends Component {
 
   render() {
     const { journeyProgress, ...props } = this.props;
-    if (!journeyProgress)
+    if (!journeyProgress) {
       return (
         <div {...props}>
           <Spinner />
         </div>
       );
+    }
     return <div {...props}>{this.renderAttempts(journeyProgress)}</div>;
   }
 }

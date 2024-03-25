@@ -7,7 +7,7 @@ import Criterion from './Criterion.js';
 
 describe('BasicQueryBuilder -> Continuous Criterion', () => {
   it('should render criterion with value', () => {
-    const testDate = moment('1986-10-31', 'YYYY-MM-DD');
+    const testDate = moment('1986-10-31', 'YYYY-MM-DD').utc();
     const criterion = fromJS({
       timestamp: {
         $gt: {

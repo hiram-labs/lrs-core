@@ -57,7 +57,7 @@ const runBatchDelete = async ({
 
   // Schedule this to run again at the start of the next window
   const nextDateTime = nextRunAtDateTime(siteSettings);
-  const now = moment();
+  const now = moment().utc();
   const msUntilNextRun = nextDateTime.diff(now);
   logger.debug(`Running again at ${nextDateTime} (${nextDateTime.fromNow()})`);
 

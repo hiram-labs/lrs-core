@@ -5,7 +5,7 @@ import OptionListItem from 'ui/components/OptionListItem';
 import moment from 'moment';
 
 const DownloadListItem = ({ model, deleteModel }) => {
-  if (model.get('isReady') || moment(model.get('time')).isBefore(moment().subtract(1, 'days'))) {
+  if (model.get('isReady') || moment(model.get('time')).utc().isBefore(moment().utc().subtract(1, 'days'))) {
     return (
       <OptionListItem
         icon={

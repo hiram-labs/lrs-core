@@ -76,7 +76,7 @@ function* checkTokensExpired(token, duck) {
   }
 
   const expMoment = moment.unix(token.get('exp'));
-  const fiveMinutesLater = moment().add(3, 'minutes');
+  const fiveMinutesLater = moment().utc().add(3, 'minutes');
   const willExpiredSoon = expMoment.isBefore(fiveMinutesLater);
   if (willExpiredSoon) {
     const tokenType = token.get('tokenType');

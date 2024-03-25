@@ -11,7 +11,7 @@ describe('expirationNotificationEmails', () => {
 
   it('should send weekBefore email', async () => {
     const organisation = await Organisation.create({
-      expiration: moment().add(1, 'day').toDate()
+      expiration: moment().utc().add(1, 'day').toDate()
     });
 
     let publishCalled = false;
@@ -33,7 +33,7 @@ describe('expirationNotificationEmails', () => {
 
   it('should not send any email', async () => {
     const organisation = await Organisation.create({
-      expiration: moment().add(9, 'day').toDate()
+      expiration: moment().utc().add(9, 'day').toDate()
     });
 
     let publishCalled = false;
@@ -53,7 +53,7 @@ describe('expirationNotificationEmails', () => {
 
   it('should send expiration email', async () => {
     const organisation = await Organisation.create({
-      expiration: moment().subtract(1, 'day').toDate()
+      expiration: moment().utc().subtract(1, 'day').toDate()
     });
 
     let publishCalled = false;

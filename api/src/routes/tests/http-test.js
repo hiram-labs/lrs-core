@@ -67,16 +67,20 @@ describe('API HTTP Route tests', function describeTest() {
           expect(refreshTokenCookie.Path).to.equal(`/api${routes.AUTH_JWT_REFRESH}`);
           expect(Object.keys(refreshTokenCookie).includes('HttpOnly')).to.equal(true);
 
-          expect(moment(refreshTokenCookie.Expires).isBefore(moment().add(7, 'days'))).to.equal(true);
-          expect(moment(refreshTokenCookie.Expires).isAfter(moment().add(7, 'days').add(-3, 's'))).to.equal(true);
+          expect(moment(refreshTokenCookie.Expires).utc().isBefore(moment().utc().add(7, 'days'))).to.equal(true);
+          expect(moment(refreshTokenCookie.Expires).utc().isAfter(moment().utc().add(7, 'days').add(-3, 's'))).to.equal(
+            true
+          );
 
           const refreshToken = refreshTokenCookie.refresh_token_user_561a679c0c5d017e4004714f;
           const decodedRefreshToken = jsonwebtoken.verify(refreshToken, process.env.APP_SECRET);
 
           expect(decodedRefreshToken.userId).to.equal('561a679c0c5d017e4004714f');
           expect(decodedRefreshToken.tokenType).to.equal('user_refresh');
-          expect(moment.unix(decodedRefreshToken.exp).isBefore(moment().add(7, 'days'))).to.equal(true);
-          expect(moment.unix(decodedRefreshToken.exp).isAfter(moment().add(7, 'days').add(-3, 's'))).to.equal(true);
+          expect(moment.unix(decodedRefreshToken.exp).isBefore(moment().utc().add(7, 'days'))).to.equal(true);
+          expect(moment.unix(decodedRefreshToken.exp).isAfter(moment().utc().add(7, 'days').add(-3, 's'))).to.equal(
+            true
+          );
 
           // Test body (access token)
           const decodedAccessToken = jsonwebtoken.verify(res.text, process.env.APP_SECRET);
@@ -84,8 +88,8 @@ describe('API HTTP Route tests', function describeTest() {
           expect(decodedAccessToken.tokenType).to.equal('user');
           expect(decodedAccessToken.tokenId).to.equal('561a679c0c5d017e4004714f');
 
-          expect(moment.unix(decodedAccessToken.exp).isBefore(moment().add(1, 'h'))).to.equal(true);
-          expect(moment.unix(decodedAccessToken.exp).isAfter(moment().add(1, 'h').add(-3, 's'))).to.equal(true);
+          expect(moment.unix(decodedAccessToken.exp).isBefore(moment().utc().add(1, 'h'))).to.equal(true);
+          expect(moment.unix(decodedAccessToken.exp).isAfter(moment().utc().add(1, 'h').add(-3, 's'))).to.equal(true);
         });
     });
 
@@ -129,8 +133,10 @@ describe('API HTTP Route tests', function describeTest() {
           expect(refreshTokenCookie.Path).to.equal(`/api${routes.AUTH_JWT_REFRESH}`);
           expect(Object.keys(refreshTokenCookie).includes('HttpOnly')).to.equal(true);
 
-          expect(moment(refreshTokenCookie.Expires).isBefore(moment().add(7, 'days'))).to.equal(true);
-          expect(moment(refreshTokenCookie.Expires).isAfter(moment().add(7, 'days').add(-3, 's'))).to.equal(true);
+          expect(moment(refreshTokenCookie.Expires).utc().isBefore(moment().utc().add(7, 'days'))).to.equal(true);
+          expect(moment(refreshTokenCookie.Expires).utc().isAfter(moment().utc().add(7, 'days').add(-3, 's'))).to.equal(
+            true
+          );
 
           const refreshToken = refreshTokenCookie.refresh_token_organisation_561a679c0c5d017e4004714f;
           const decodedRefreshToken = jsonwebtoken.verify(refreshToken, process.env.APP_SECRET);
@@ -138,8 +144,10 @@ describe('API HTTP Route tests', function describeTest() {
           expect(decodedRefreshToken.userId).to.equal('561a679c0c5d017e4004714f');
           expect(decodedRefreshToken.tokenId).to.equal('561a679c0c5d017e4004714f');
           expect(decodedRefreshToken.tokenType).to.equal('organisation_refresh');
-          expect(moment.unix(decodedRefreshToken.exp).isBefore(moment().add(7, 'days'))).to.equal(true);
-          expect(moment.unix(decodedRefreshToken.exp).isAfter(moment().add(7, 'days').add(-3, 's'))).to.equal(true);
+          expect(moment.unix(decodedRefreshToken.exp).isBefore(moment().utc().add(7, 'days'))).to.equal(true);
+          expect(moment.unix(decodedRefreshToken.exp).isAfter(moment().utc().add(7, 'days').add(-3, 's'))).to.equal(
+            true
+          );
 
           // Test body (access token)
           const decodedAccessToken = jsonwebtoken.verify(res.text, process.env.APP_SECRET);
@@ -147,8 +155,8 @@ describe('API HTTP Route tests', function describeTest() {
           expect(decodedAccessToken.tokenType).to.equal('organisation');
           expect(decodedAccessToken.tokenId).to.equal('561a679c0c5d017e4004714f');
 
-          expect(moment.unix(decodedAccessToken.exp).isBefore(moment().add(1, 'h'))).to.equal(true);
-          expect(moment.unix(decodedAccessToken.exp).isAfter(moment().add(1, 'h').add(-3, 's'))).to.equal(true);
+          expect(moment.unix(decodedAccessToken.exp).isBefore(moment().utc().add(1, 'h'))).to.equal(true);
+          expect(moment.unix(decodedAccessToken.exp).isAfter(moment().utc().add(1, 'h').add(-3, 's'))).to.equal(true);
         });
     });
 

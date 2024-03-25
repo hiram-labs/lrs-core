@@ -119,7 +119,7 @@ describe('batchStatementDeletion', () => {
   });
 
   it('should not delete if outside the window', async () => {
-    const thirtyMinsInFutureDate = moment().add(30, 'minutes').toDate();
+    const thirtyMinsInFutureDate = moment().utc().add(30, 'minutes').toDate();
     await SiteSettings.findByIdAndUpdate(
       SITE_SETTINGS_ID,
       {
@@ -165,7 +165,7 @@ describe('batchStatementDeletion', () => {
   });
 
   it('Should delete all documents when in window', async () => {
-    const thirtyMinsAgoDate = moment().subtract(30, 'minutes').toDate();
+    const thirtyMinsAgoDate = moment().utc().subtract(30, 'minutes').toDate();
     await SiteSettings.findByIdAndUpdate(
       SITE_SETTINGS_ID,
       {

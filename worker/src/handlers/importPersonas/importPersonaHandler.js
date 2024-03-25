@@ -13,7 +13,7 @@ export const finishedProcessing = async ({ personaImportId }) => {
     },
     {
       importStage: STAGE_IMPORTED,
-      importedAt: moment().toDate()
+      importedAt: moment().utc().toDate()
     }
   );
 

@@ -126,7 +126,7 @@ class Criterion extends Component {
   onChangeDate = (value) => {
     const yyyymmdd = moment.parseZone(value).format('YYYY-MM-DD');
     const timezone = toTimezone(this.props.timezone || this.props.orgTimezone);
-    const z = moment(yyyymmdd).tz(timezone).format('Z');
+    const z = moment(yyyymmdd).utc().tz(timezone).format('Z');
     this.onChangeCriterion(this.getOperator(), `${yyyymmdd}T00:00${z}`);
   };
 

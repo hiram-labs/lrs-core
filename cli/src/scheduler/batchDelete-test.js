@@ -24,14 +24,17 @@ describe('batchDelete', () => {
     async.forEach(
       [SiteSettings, BatchDelete],
       (model, doneDeleting) => {
-        model.deleteMany({}).then(() => doneDeleting()).catch((err) => doneDeleting(err));
+        model
+          .deleteMany({})
+          .then(() => doneDeleting())
+          .catch((err) => doneDeleting(err));
       },
       done
     );
   });
 
   it('should schedule the next run and add to queue if the time is in window', async () => {
-    const thirtyMinsAgo = moment().subtract(30, 'minutes').set('seconds', 0);
+    const thirtyMinsAgo = moment().utc().subtract(30, 'minutes').set('seconds', 0);
     const thirtyMinsAgoDate = thirtyMinsAgo.toDate();
     const expectedNextRunTime = thirtyMinsAgo.add(1, 'day');
     await SiteSettings.findByIdAndUpdate(
@@ -56,14 +59,14 @@ describe('batchDelete', () => {
       batchStatementDeletionLockTimoutSec: false
     });
 
-    const nextRunTime = moment().add(nextRunTimeout, 'milliseconds');
+    const nextRunTime = moment().utc().add(nextRunTimeout, 'milliseconds');
 
     expect(publishCount).to.equal(1);
     expect(nextRunTime.isSame(expectedNextRunTime, 'minute')).to.equal(true);
   });
 
   it('should schedule the next for the future and not publish any jobs', async () => {
-    const thirtyMinsInFuture = moment().add(30, 'minutes').set('seconds', 0);
+    const thirtyMinsInFuture = moment().utc().add(30, 'minutes').set('seconds', 0);
     const thirtyMinsInFutureDate = thirtyMinsInFuture.toDate();
     const expectedNextRunTime = thirtyMinsInFuture;
     const durationSeconds = 60 * 60;
@@ -88,7 +91,7 @@ describe('batchDelete', () => {
       },
       batchStatementDeletionLockTimoutSec: false
     });
-    const nextRunTime = moment().add(nextRunTimeout, 'milliseconds');
+    const nextRunTime = moment().utc().add(nextRunTimeout, 'milliseconds');
 
     expect(publishCount).to.equal(0);
     expect(nextRunTime.isSame(expectedNextRunTime, 'minute')).to.equal(true);

@@ -29,12 +29,14 @@ const countSelector = (schema, filter = new Map()) =>
   createSelector([paginationSelector], (pagination) => pagination.getIn([schema, filter, 'totalCount']));
 
 const cachedAtSelector = ({ schema, filter = new Map() }) =>
-  createSelector([paginationSelector], (pagination) => pagination.getIn([schema, filter, 'countCachedAt'], moment(0)));
+  createSelector([paginationSelector], (pagination) =>
+    pagination.getIn([schema, filter, 'countCachedAt'], moment(0).utc())
+  );
 
 const shouldFetchCountSelector = (schema, filter) =>
   createSelector([countStateSelector(schema, filter), cachedAtSelector({ schema, filter })], (countState, cachedAt) => {
     if (countState === IN_PROGRESS || countState === FAILED) return false;
-    const cachedFor = moment().diff(cachedAt);
+    const cachedFor = moment().utc().diff(cachedAt);
     if (cachedFor < cacheDuration.asMilliseconds()) return false;
     return true;
   });
@@ -54,12 +56,14 @@ const fetchModelsCount = createAsyncDuck({
     const { schema, filter, count } = action;
     return state
       .setIn([schema, filter, 'countState'], 'COMPLETED')
-      .setIn([schema, filter, 'countCachedAt'], moment())
+      .setIn([schema, filter, 'countCachedAt'], moment().utc())
       .setIn([schema, filter, 'totalCount'], count);
   },
   reduceFailure: (state, action) => {
     const { schema, filter } = action;
-    return state.setIn([schema, filter, 'countState'], 'FAILED').setIn([schema, filter, 'countCachedAt'], moment());
+    return state
+      .setIn([schema, filter, 'countState'], 'FAILED')
+      .setIn([schema, filter, 'countCachedAt'], moment().utc());
   },
   reduceComplete: (state, action) => {
     const { schema, filter } = action;

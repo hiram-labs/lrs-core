@@ -63,7 +63,7 @@ const requestStateSelector = ({ schema, filter, sort, cursor }) =>
 
 const cachedAtSelector = ({ schema, filter, sort, cursor }) =>
   createSelector(paginationStateSelector(schema, toImmutable(filter), sort), (pagination) =>
-    pagination.getIn([cursor, 'cachedAt'], moment(0))
+    pagination.getIn([cursor, 'cachedAt'], moment(0).utc())
   );
 
 const shouldFetchSelector = ({ schema, filter, sort, cursor }) =>
@@ -74,7 +74,7 @@ const shouldFetchSelector = ({ schema, filter, sort, cursor }) =>
         return false;
       }
 
-      const cachedFor = moment().diff(cachedAt);
+      const cachedFor = moment().utc().diff(cachedAt);
       return cachedFor >= cacheDuration.asMilliseconds();
     }
   );
@@ -119,7 +119,7 @@ export const reduceSuccess = (
     direction
   }
 ) => {
-  const cachedAt = moment();
+  const cachedAt = moment().utc();
 
   const newEdges = new OrderedSet(edges).map((item) => item.set('cachedAt', cachedAt));
 
@@ -146,7 +146,7 @@ const fetchModels = createAsyncDuck({
   reduceFailure: (state, { schema, filter, sort, cursor }) =>
     state
       .setIn([schema, toImmutable(filter), sort, cursor, 'requestState'], FAILED)
-      .setIn([schema, toImmutable(filter), sort, cursor, 'cachedAt'], moment()),
+      .setIn([schema, toImmutable(filter), sort, cursor, 'cachedAt'], moment().utc()),
 
   reduceComplete: (state, { schema, filter, sort, cursor }) =>
     state.setIn([schema, toImmutable(filter), sort, cursor, 'requestState'], null),

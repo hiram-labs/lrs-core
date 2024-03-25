@@ -15,12 +15,12 @@ export default async function ({
 }) {
   let weekBeforeMoment;
   if (weekBefore) {
-    weekBeforeMoment = moment(weekBefore);
+    weekBeforeMoment = moment(weekBefore).utc();
   } else {
-    weekBeforeMoment = moment().add(1, 'week');
+    weekBeforeMoment = moment().utc().add(1, 'week');
   }
 
-  const todayMoment = moment();
+  const todayMoment = moment().utc();
 
   const weekBeforeDate = weekBeforeMoment.toDate();
   const todayDate = todayMoment.toDate();
@@ -44,8 +44,8 @@ export default async function ({
 
   await map(toSendEmail, async (organisation) => {
     if (
-      weekBeforeMoment.isAfter(moment(organisation.expiration)) &&
-      todayMoment.isAfter(moment(organisation.expiration))
+      weekBeforeMoment.isAfter(moment(organisation.expiration).utc()) &&
+      todayMoment.isAfter(moment(organisation.expiration).utc())
     ) {
       if (organisation.expirationNotifications.expirationNotificationSent === EMAIL_NOOP) {
         // send expiration email
@@ -60,7 +60,7 @@ export default async function ({
         organisation.expirationNotifications.expirationNotificationSent = EMAIL_PROCESSING;
         await organisation.save();
       }
-    } else if (weekBeforeMoment.isAfter(moment(organisation.expiration))) {
+    } else if (weekBeforeMoment.isAfter(moment(organisation.expiration).utc())) {
       if (organisation.expirationNotifications.weekBeforeNotificationSent === EMAIL_NOOP) {
         // send week before email
         await publish({

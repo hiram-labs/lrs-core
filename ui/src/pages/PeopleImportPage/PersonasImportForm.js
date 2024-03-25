@@ -50,7 +50,7 @@ export const PersonasImportFormComponent = ({ model, changeTitle, organisationId
           <div className="stageImported">
             <ConfigureUpload className="configureUpload" model={model} disabled />
             <blockquote>
-              <h4>Imported on {moment(model.get('importedAt')).format('ddd DD MMM YYYY h:mm:ss')}</h4>
+              <h4>Imported on {moment(model.get('importedAt')).utc().format('ddd DD MMM YYYY h:mm:ss')}</h4>
               <p>
                 <b>
                   Merged: {model.getIn(['result', 'merged'], 0)} personas

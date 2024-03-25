@@ -37,7 +37,7 @@ const aggregationShouldRecallSelector = (pipeline) =>
     const completedAt = aggregations.getIn([pipeline, 'completedAt']);
 
     // Cached and is running
-    const cachedAndIsRunning = startedAt && completedAt && moment(completedAt).isBefore(moment(startedAt));
+    const cachedAndIsRunning = startedAt && completedAt && moment(completedAt).utc().isBefore(moment(startedAt).utc());
     if (cachedAndIsRunning) {
       return true;
     }
@@ -109,7 +109,7 @@ function* recallAggregationIfRequired(args) {
   const completedAt = args.result.get('completedAt');
 
   // Cached and is running
-  const cachedAndIsRunning = startedAt && completedAt && moment(completedAt).isBefore(moment(startedAt));
+  const cachedAndIsRunning = startedAt && completedAt && moment(completedAt).utc().isBefore(moment(startedAt).utc());
   if (cachedAndIsRunning) {
     yield call(delay, 1000);
     yield put(fetchAggregation.actions.start({ pipeline, sinceAt: completedAt }));
