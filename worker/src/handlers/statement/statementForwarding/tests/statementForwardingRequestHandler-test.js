@@ -1,10 +1,11 @@
 import stringToStream from 'string-to-stream';
-import StatementForwarding from 'lib/models/statementForwarding';
-import Statement from 'lib/models/statement';
 import Promise from 'bluebird';
 import axios from 'axios';
 import AxiosMockAdapter from 'axios-mock-adapter';
 import { expect } from 'chai';
+import StatementForwarding from 'lib/models/statementForwarding';
+import Statement from 'lib/models/statement';
+import ForwardingRequestError from 'worker/handlers/statement/statementForwarding/ForwardingRequestError';
 import { createSha } from './utils';
 import statementForwardingRequestHandler from '../statementForwardingRequestHandler';
 import getStatementsRepo from '../getStatementsRepo';
@@ -145,7 +146,7 @@ describe('Statement Forwarding Request', () => {
     try {
       await promiseRequestHandler({ statementForwarding, statement });
     } catch (err) {
-      expect(err).to.be.err; // eslint-disable-line no-unused-expressions
+      expect(err).to.be.instanceOf(ForwardingRequestError);
     }
     expect(mock.history.post.length).to.equal(1);
 
@@ -156,7 +157,7 @@ describe('Statement Forwarding Request', () => {
     expect(doneStatement.failedForwardingLog[0].errorInfo.responseStatus).to.equal(404);
   }).timeout(5000);
 
-  it('If a request timesout, keep in pending', async () => {
+  it('If a request timeout, keep in pending', async () => {
     const statementId = '59438cabedcedb70146337ec';
     const statementForwardingId = '59438cabedcedb70146337eb';
     const organisationId = '561a679c0c5d017e4004715a';
@@ -189,7 +190,7 @@ describe('Statement Forwarding Request', () => {
       await promiseRequestHandler({ statementForwarding, statement });
       expect(true, 'Should not reach this line').to.equal(false);
     } catch (err) {
-      expect(err).to.be.err; // eslint-disable-line no-unused-expressions
+      expect(err).to.be.instanceOf(ForwardingRequestError);
     }
     expect(mock.history.post.length).to.equal(1);
 

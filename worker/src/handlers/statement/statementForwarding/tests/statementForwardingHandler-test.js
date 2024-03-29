@@ -11,7 +11,7 @@ import statementForwardingHandler from '../statementForwardingHandler';
 import { purgeQueues } from './utils';
 
 describe('Statement Forwarding handler', () => {
-  it('Should take a statement and put it in a queue for each statementForwarder', (done) => {
+  it('Should take a statement and put it in a queue for each statementForwarder', () => {
     const statementId = '561a679c0c5d017e4004714f';
     const organisationId = '561a679c0c5d017e4004715a';
 
@@ -96,10 +96,7 @@ describe('Statement Forwarding handler', () => {
       .then(
         () => cleanUp(),
         () => cleanUp()
-      )
-      .then(() => {
-        done();
-      });
+      );
   }).timeout(5000);
 
   it('Statement end to end', async () => {

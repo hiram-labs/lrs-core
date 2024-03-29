@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-expressions */
 import chai from 'chai';
-import chaiFs from 'chai-fs';
 import path from 'path';
 import stream from 'stream';
 import ExportDBHelper from 'api/utils/tests/exportsDBHelper';
@@ -12,7 +10,6 @@ import _ from 'lodash';
 
 const connection = getConnection();
 
-chai.use(chaiFs);
 const { expect } = chai;
 const exportDBHelper = new ExportDBHelper();
 

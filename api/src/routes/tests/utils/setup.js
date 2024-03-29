@@ -10,20 +10,17 @@ const deleteAllData = async () => {
   await Promise.all(values(connection.models).map((model) => model.deleteMany({})));
 };
 export default () => {
-  before(async (done) => {
+  before(async () => {
     await awaitReadyConnection(connection);
     await deleteAllData();
-    done();
   });
 
-  beforeEach('Set up organisation for testing', async (done) => {
+  beforeEach('Set up organisation for testing', async () => {
     await Promise.all([createOrg()]);
-    done();
   });
 
-  afterEach('Clear db collections', async (done) => {
+  afterEach('Clear db collections', async () => {
     await deleteAllData();
-    done();
   });
 
   return apiApp;
