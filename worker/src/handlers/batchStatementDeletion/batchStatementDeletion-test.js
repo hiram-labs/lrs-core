@@ -21,7 +21,7 @@ describe('batchStatementDeletion', () => {
   const statementData = { field: 'exists' };
   const validFilter = '{"statement.field": "exists"}';
 
-  beforeEach(async (done) => {
+  beforeEach(async () => {
     process.env.ENABLE_STATEMENT_DELETION = true;
 
     await Statement.create({
@@ -50,21 +50,21 @@ describe('batchStatementDeletion', () => {
       organisation: testId,
       scopes: [XAPI_STATEMENTS_DELETE]
     });
-
-    done();
   });
 
-  afterEach((done) => {
-    async.forEach(
-      [Statement, SiteSettings, BatchDelete, Client],
-      (model, doneDeleting) => {
-        model
-          .deleteMany({})
-          .then(() => doneDeleting())
-          .catch((err) => doneDeleting(err));
-      },
-      done
-    );
+  afterEach(() => {
+    return new Promise((resolve, reject) => {
+      async.forEach(
+        [Statement, SiteSettings, BatchDelete, Client],
+        (model, doneDeleting) => {
+          model
+            .deleteMany({})
+            .then(() => doneDeleting())
+            .catch((err) => doneDeleting(err));
+        },
+        (err) => (err ? reject(err) : resolve())
+      );
+    });
   });
 
   it('should delete statements if in the window', async () => {

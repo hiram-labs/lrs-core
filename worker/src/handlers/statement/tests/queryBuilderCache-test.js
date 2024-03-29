@@ -1,9 +1,6 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-unused-vars */
 import { expect } from 'chai';
-import * as models from 'lib/models';
 import { getConnection } from 'lib/connections/mongoose';
-import getCachesFromStatement, { getAtPath } from 'lib/services/querybuildercache/getCachesFromStatement';
+import { getAtPath } from 'lib/services/querybuildercache/getCachesFromStatement';
 import QueryBuilderCacheDBHelper from 'worker/handlers/statement/tests/queryBuilderCacheDBHelper';
 import awaitReadyConnection from 'api/routes/tests/utils/awaitReadyConnection';
 import { promisify } from 'bluebird';
@@ -21,12 +18,12 @@ describe('Query builder cache handler test', () => {
     await promisify(queryBuilderCacheDBHelper.prepare)();
   });
 
-  afterEach('Clear db collections', (done) => {
-    queryBuilderCacheDBHelper.cleanUp(done);
+  afterEach('Clear db collections', async () => {
+    await promisify(queryBuilderCacheDBHelper.cleanUp)();
   });
 
   describe('getAtPath', () => {
-    it('should get an actor', (done) => {
+    it('should get an actor', () => {
       const statement = queryBuilderCacheDBHelper.personStatement;
       const searchPath = ['statement', 'actor'];
       const value = getAtPath(statement, { searchPath });
@@ -36,17 +33,15 @@ describe('Query builder cache handler test', () => {
         path: searchPath,
         value: statement.statement.actor
       });
-      done();
     });
-    it('should get an object from a path', (done) => {
+    it('should get an object from a path', () => {
       const statement = queryBuilderCacheDBHelper.personStatement;
       const searchPath = ['statement', 'object'];
       const value = getAtPath(statement, { searchPath });
       expect(value.path).to.deep.equal(searchPath);
       expect(value.value.id).to.deep.equal(statement.statement.object.id);
-      done();
     });
-    it('should get wildcard values', (done) => {
+    it('should get wildcard values', () => {
       const statement = {
         id: '561a679c0c5d017e4004714f',
         actor: { mbox: 'mailto:test@example.org' },
@@ -71,9 +66,8 @@ describe('Query builder cache handler test', () => {
           value: statement.object.id
         }
       ]);
-      done();
     });
-    it('should filter wildcard values', (done) => {
+    it('should filter wildcard values', () => {
       const extensionKey = 'http://example.org/extension';
       const statement = {
         id: '561a679c0c5d017e4004714f',
@@ -99,10 +93,9 @@ describe('Query builder cache handler test', () => {
           value: 'testCategory'
         }
       ]);
-      done();
     });
 
-    it('should get context parent type', (done) => {
+    it('should get context parent type', () => {
       const definitionType = 'http://example.org/parent-definition-type';
       const statement = {
         id: '561a679c0c5d017e4004714f',
@@ -136,7 +129,6 @@ describe('Query builder cache handler test', () => {
           value: definitionType
         }
       ]);
-      done();
     });
   });
 });

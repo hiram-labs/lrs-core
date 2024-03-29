@@ -19,14 +19,14 @@ const BATCH_STATEMENT_DELETION_LOCK_TIMEOUT_SEC = 30;
 const BATCH_STATEMENT_DELETION_CACHE_KEY = cachePrefix('BATCH_STATEMENT_DELETION_SCHEDULER:RUNNING');
 const runBatchDelete = async ({
   publish = publishQueue,
-  batchStatementDeletionLockTimoutSec = BATCH_STATEMENT_DELETION_LOCK_TIMEOUT_SEC
+  batchStatementDeletionLockTimeoutSec = BATCH_STATEMENT_DELETION_LOCK_TIMEOUT_SEC
 }) => {
   if (boolean(get(process.env, 'ENABLE_STATEMENT_DELETION', true)) === false) {
     return;
   }
 
-  const res = batchStatementDeletionLockTimoutSec
-    ? await redisClient.set(BATCH_STATEMENT_DELETION_CACHE_KEY, 1, 'EX', batchStatementDeletionLockTimoutSec, 'NX')
+  const res = batchStatementDeletionLockTimeoutSec
+    ? await redisClient.set(BATCH_STATEMENT_DELETION_CACHE_KEY, 1, 'EX', batchStatementDeletionLockTimeoutSec, 'NX')
     : 'OK';
 
   const siteSettings = await SiteSettings.findOne({ _id: new ObjectId(SITE_SETTINGS_ID) });

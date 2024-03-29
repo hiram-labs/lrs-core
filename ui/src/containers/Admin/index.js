@@ -14,7 +14,7 @@ const renderPage = (routeName) => {
   if (testRoute('admin.users')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SiteUsersPage')
+        loader: import('ui/pages/SiteUsersPage')
       })
     );
   }
@@ -22,7 +22,7 @@ const renderPage = (routeName) => {
   if (testRoute('admin.organisations')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SiteOrgsPage')
+        loader: import('ui/pages/SiteOrgsPage')
       })
     );
   }

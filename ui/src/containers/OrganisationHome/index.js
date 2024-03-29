@@ -16,7 +16,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.data.dashboards.id')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/containers/Dashboard')
+        loader: import('ui/containers/Dashboard')
       })
     );
   }
@@ -24,7 +24,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.data.dashboards')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/containers/Dashboards')
+        loader: import('ui/containers/Dashboards')
       })
     );
   }
@@ -32,7 +32,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.data.visualise')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/containers/Visualise')
+        loader: import('ui/containers/Visualise')
       })
     );
   }
@@ -40,7 +40,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.data.source')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/DataSourcePage')
+        loader: import('ui/pages/DataSourcePage')
       })
     );
   }
@@ -48,7 +48,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.data.statementForwarding')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/DataStatementForwardingPage')
+        loader: import('ui/pages/DataStatementForwardingPage')
       })
     );
   }
@@ -58,7 +58,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.people.imports')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/PeopleImportPage')
+        loader: import('ui/pages/PeopleImportPage')
       })
     );
   }
@@ -66,7 +66,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.people.manage')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/PeopleManagePage')
+        loader: import('ui/pages/PeopleManagePage')
       })
     );
   }
@@ -76,7 +76,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.settings.stores')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SettingsStoresPage')
+        loader: import('ui/pages/SettingsStoresPage')
       })
     );
   }
@@ -84,7 +84,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.settings.users')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SettingsUsersPage')
+        loader: import('ui/pages/SettingsUsersPage')
       })
     );
   }
@@ -92,7 +92,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.settings.roles')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SettingsRolesPage')
+        loader: import('ui/pages/SettingsRolesPage')
       })
     );
   }
@@ -100,7 +100,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.settings.suborgs')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SettingsOrganisationsPage')
+        loader: import('ui/pages/SettingsOrganisationsPage')
       })
     );
   }
@@ -108,7 +108,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.settings.clients')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SettingsClientsPage')
+        loader: import('ui/pages/SettingsClientsPage')
       })
     );
   }
@@ -116,7 +116,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.settings.apps')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SettingsAppsPage')
+        loader: import('ui/pages/SettingsAppsPage')
       })
     );
   }
@@ -124,7 +124,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.apps.salesDemo')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SettingsAppsPage/subpages/SalesDemoAppPage')
+        loader: import('ui/pages/SettingsAppsPage/subpages/SalesDemoAppPage')
       })
     );
   }
@@ -132,7 +132,7 @@ const renderPage = (routeName) => {
   if (testRoute('organisation.apps')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/SettingsAppsPage')
+        loader: import('ui/pages/SettingsAppsPage')
       })
     );
   }

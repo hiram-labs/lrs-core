@@ -2,7 +2,6 @@ import { List } from 'immutable';
 import { createSelector } from 'reselect';
 import { modelsSchemaIdSelector } from 'ui/redux/selectors';
 
-/* eslint-disable import/prefer-default-export*/
 export const getVisualisationsFromDashboard = (dashboardId) =>
   createSelector(
     [(state) => state, modelsSchemaIdSelector('dashboard', dashboardId, { deep: true })],

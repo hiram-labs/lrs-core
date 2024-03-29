@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export*/
 export const AUTH_FAILURE = {
   USER_NOT_FOUND: 'USER_NOT_FOUND',
   PASSWORD_INCORRECT: 'PASSWORD_INCORRECT',

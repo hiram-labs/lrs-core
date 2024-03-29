@@ -37,7 +37,6 @@ const html = ({
               window.rootUrl='${protocol}://${config.host}:${config.port}';
             `
             }}
-            charSet="UTF-8"
           />
         )}
         {scripts && scripts.map((script) => <script key={script} src={script} />)}

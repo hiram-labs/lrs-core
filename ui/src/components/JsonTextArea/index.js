@@ -28,7 +28,7 @@ export default class JsonTextArea extends Component {
     this.state = stateFromProps(props);
   }
 
-  componentWillReceiveProps = (nextProps) => {
+  UNSAFE_componentWillReceiveProps = (nextProps) => {
     const oldValue = this.state.value;
     const stateWithValue = stateFromProps(nextProps);
     const selectionStart = cursorPosition({

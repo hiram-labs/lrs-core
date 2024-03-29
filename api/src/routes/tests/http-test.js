@@ -297,57 +297,63 @@ describe('API HTTP Route tests', function describeTest() {
 
   describe('Auth routes', () => {
     describe('Try and request a new password', () => {
-      it('Should find the user using email and send them an email', (done) => {
-        apiApp.post(routes.AUTH_RESETPASSWORD_REQUEST).send({ email: db.user.email }).expect(204, done);
+      it('Should find the user using email and send them an email', () => {
+        return new Promise((resolve) => {
+          apiApp.post(routes.AUTH_RESETPASSWORD_REQUEST).send({ email: db.user.email }).expect(204, resolve);
+        });
       });
     });
 
     describe('Get auth client info', () => {
-      it('should return the clients organisation and scope', (done) => {
-        apiApp
-          .get(routes.AUTH_CLIENT_INFO)
-          .auth(db.client.api.basic_key, db.client.api.basic_secret)
-          .expect('Content-Type', /json/)
-          .expect((res) => {
-            expect(res.body.title).to.equal(db.client.title);
-            expect(res.body.organisation).to.equal(db.client.organisation.toString());
-            expect(res.body.scopes.length).to.equal(db.client.scopes.length);
-            expect(res.body.scopes[0]).to.equal(db.client.scopes[0]);
-          })
-          .expect(200, done);
+      it('should return the clients organisation and scope', () => {
+        return new Promise((resolve) => {
+          apiApp
+            .get(routes.AUTH_CLIENT_INFO)
+            .auth(db.client.api.basic_key, db.client.api.basic_secret)
+            .expect('Content-Type', /json/)
+            .expect((res) => {
+              expect(res.body.title).to.equal(db.client.title);
+              expect(res.body.organisation).to.equal(db.client.organisation.toString());
+              expect(res.body.scopes.length).to.equal(db.client.scopes.length);
+              expect(res.body.scopes[0]).to.equal(db.client.scopes[0]);
+            })
+            .expect(200, resolve);
+        });
       });
     });
   });
 
   describe('Try and reset password using a token', () => {
-    it('Should find the user using token and email and change their user password', (done) => {
-      db.user.createResetToken((token) => {
-        db.user.resetTokens.push(token);
-        db.user
-          .save()
-          .then(() => {
-            apiApp
-              .post(routes.AUTH_RESETPASSWORD_RESET)
-              .send({
-                email: db.user.email,
-                token: token.token,
-                password: 'mynewpassword999'
-              })
-              .expect(200)
-              .end((err) => {
-                if (err) return done(err);
-                expect(err).to.equal(null);
+    it('Should find the user using token and email and change their user password', () => {
+      return new Promise((resolve, reject) => {
+        db.user.createResetToken((token) => {
+          db.user.resetTokens.push(token);
+          db.user
+            .save()
+            .then(() => {
+              apiApp
+                .post(routes.AUTH_RESETPASSWORD_RESET)
+                .send({
+                  email: db.user.email,
+                  token: token.token,
+                  password: 'mynewpassword999'
+                })
+                .expect(200)
+                .end((err) => {
+                  if (err) return reject(err);
+                  expect(err).to.equal(null);
 
-                const User = getConnection().model('User');
-                User.findOne({ _id: db.user.id })
-                  .then((user) => {
-                    expect(user.password).to.not.equal(db.user.password);
-                    done();
-                  })
-                  .catch(done);
-              });
-          })
-          .catch(done);
+                  const User = getConnection().model('User');
+                  User.findOne({ _id: db.user.id })
+                    .then((user) => {
+                      expect(user.password).to.not.equal(db.user.password);
+                      resolve();
+                    })
+                    .catch(reject);
+                });
+            })
+            .catch(reject);
+        });
       });
     });
   });
@@ -385,60 +391,75 @@ describe('API HTTP Route tests', function describeTest() {
         });
       });
 
-      it('should return 200 with clientBasic auth', (done) => {
-        apiApp
-          .get(`${routes.STATEMENTS_AGGREGATE}?pipeline=[]`)
-          .auth(db.client.api.basic_key, db.client.api.basic_secret)
-          .expect(200, done);
+      it('should return 200 with clientBasic auth', () => {
+        return new Promise((resolve) => {
+          apiApp
+            .get(`${routes.STATEMENTS_AGGREGATE}?pipeline=[]`)
+            .auth(db.client.api.basic_key, db.client.api.basic_secret)
+            .expect(200, resolve);
+        });
       });
     });
   });
 
   describe('GET organisations', () => {
-    it('should GET all organisations', (done) => {
-      apiApp.get(`${routes.RESTIFY_PREFIX}/organisation`).set('Authorization', `Bearer ${jwtToken}`).expect(200, done);
+    it('should GET all organisations', () => {
+      return new Promise((resolve) => {
+        apiApp
+          .get(`${routes.RESTIFY_PREFIX}/organisation`)
+          .set('Authorization', `Bearer ${jwtToken}`)
+          .expect(200, resolve);
+      });
     });
   });
 
   describe('oauth/token', () => {
-    it('should return 404 when request method is GET', (done) => {
-      apiApp.get(routes.OAUTH2_TOKEN).expect(404, done);
+    it('should return 404 when request method is GET', () => {
+      return new Promise((resolve) => {
+        apiApp.get(routes.OAUTH2_TOKEN).expect(404, resolve);
+      });
     });
 
-    it('should return 200 when all parameters are valid', (done) => {
-      apiApp
-        .post(routes.OAUTH2_TOKEN)
-        .set('Content-Type', 'application/x-www-form-urlencoded')
-        .send({
-          grant_type: 'client_credentials',
-          client_id: db.client.api.basic_key,
-          client_secret: db.client.api.basic_secret
-        })
-        .expect(200, done);
+    it('should return 200 when all parameters are valid', () => {
+      return new Promise((resolve) => {
+        apiApp
+          .post(routes.OAUTH2_TOKEN)
+          .set('Content-Type', 'application/x-www-form-urlencoded')
+          .send({
+            grant_type: 'client_credentials',
+            client_id: db.client.api.basic_key,
+            client_secret: db.client.api.basic_secret
+          })
+          .expect(200, resolve);
+      });
     });
 
-    it('should return 400 when client_id is invalid', (done) => {
-      apiApp
-        .post(routes.OAUTH2_TOKEN)
-        .set('Content-Type', 'application/x-www-form-urlencoded')
-        .send({
-          grant_type: 'client_credentials',
-          client_id: `${db.client.api.basic_key}_`,
-          client_secret: db.client.api.basic_secret
-        })
-        .expect(400, done);
+    it('should return 400 when client_id is invalid', () => {
+      return new Promise((resolve) => {
+        apiApp
+          .post(routes.OAUTH2_TOKEN)
+          .set('Content-Type', 'application/x-www-form-urlencoded')
+          .send({
+            grant_type: 'client_credentials',
+            client_id: `${db.client.api.basic_key}_`,
+            client_secret: db.client.api.basic_secret
+          })
+          .expect(400, resolve);
+      });
     });
 
-    it('should return 400 when client_secret is invalid', (done) => {
-      apiApp
-        .post(routes.OAUTH2_TOKEN)
-        .set('Content-Type', 'application/x-www-form-urlencoded')
-        .send({
-          grant_type: 'client_credentials',
-          client_id: db.client.api.basic_key,
-          client_secret: `${db.client.api.basic_secret}_`
-        })
-        .expect(400, done);
+    it('should return 400 when client_secret is invalid', () => {
+      return new Promise((resolve) => {
+        apiApp
+          .post(routes.OAUTH2_TOKEN)
+          .set('Content-Type', 'application/x-www-form-urlencoded')
+          .send({
+            grant_type: 'client_credentials',
+            client_id: db.client.api.basic_key,
+            client_secret: `${db.client.api.basic_secret}_`
+          })
+          .expect(400, resolve);
+      });
     });
   });
 });

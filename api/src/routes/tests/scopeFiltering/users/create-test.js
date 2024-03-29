@@ -61,7 +61,7 @@ describe('API HTTP POST users route scope filtering', () => {
     await assertAuthorised({ bearerToken });
   });
 
-  it('should append organisation when POSTing existing user inside the org when using all scope ', async () => {
+  it('should append organisation when POSTing existing user inside the org when using all scope with bearer', async () => {
     const bearerToken = await createOrgToken([ALL]);
     await assertUserCreation({ bearerToken });
   });
@@ -99,7 +99,7 @@ describe('API HTTP POST users route scope filtering', () => {
     await assertAuthorised({ basicClient });
   });
 
-  it('should create inside the org when using basic client with ALL scopes and additional orgs including the tokens org', async () => {
+  it('should create inside the org when using basic client with ALL scopes and additional orgs including the tokens org 1', async () => {
     const otherOrg = new ObjectId().toString();
     const basicClient = await createClient([ALL]);
     await assertAuthorised({ basicClient, additionalUserData: { organisations: [otherOrg, testId] } }).expect((res) => {
@@ -107,7 +107,7 @@ describe('API HTTP POST users route scope filtering', () => {
     });
   });
 
-  it('should create inside the org when using basic client with ALL scopes and additional orgs including the tokens org', async () => {
+  it('should create inside the org when using basic client with ALL scopes and additional orgs including the tokens org 2', async () => {
     const otherOrg = new ObjectId().toString();
     const basicClient = await createClient([ALL]);
     await assertCreate({ basicClient, additionalUserData: { organisations: [otherOrg] }, expectedCode: 400 });
@@ -155,7 +155,7 @@ describe('API HTTP POST users route scope filtering', () => {
     });
   });
 
-  it('should append organisation when POSTing existing user inside the org when using all scope ', async () => {
+  it('should append organisation when POSTing existing user inside the org when using all scope with basic', async () => {
     const basicClient = await createClient([ALL]);
     await assertUserCreation({ basicClient });
   });

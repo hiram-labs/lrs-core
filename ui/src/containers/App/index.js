@@ -18,49 +18,49 @@ const renderPage = (routeName) => {
   if (testRoute('login')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/LoginPage')
+        loader: import('ui/pages/LoginPage')
       })
     );
   }
   if (testRoute('home')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/HomePage')
+        loader: import('ui/pages/HomePage')
       })
     );
   }
   if (testRoute('organisation')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/containers/OrganisationHome')
+        loader: import('ui/containers/OrganisationHome')
       })
     );
   }
   if (testRoute('admin')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/containers/Admin')
+        loader: import('ui/containers/Admin')
       })
     );
   }
   if (testRoute('forgot')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/ForgotPasswordPage')
+        loader: import('ui/pages/ForgotPasswordPage')
       })
     );
   }
   if (testRoute('reset')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/pages/ResetPasswordPage')
+        loader: import('ui/pages/ResetPasswordPage')
       })
     );
   }
   if (testRoute('embedded-dashboard')) {
     return React.createElement(
       createAsyncComponent({
-        loader: System.import('ui/containers/EmbeddableDashboard')
+        loader: import('ui/containers/EmbeddableDashboard')
       })
     );
   }

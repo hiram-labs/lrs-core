@@ -9,7 +9,7 @@ import batchDelete from './batchDelete';
 
 describe('batchDelete', () => {
   let batchDeleteId;
-  beforeEach(async (done) => {
+  beforeEach(async () => {
     const batchDeleteModel = await BatchDelete.create({
       filter: '{}',
       total: 2,
@@ -17,20 +17,23 @@ describe('batchDelete', () => {
       organisation: testId
     });
     batchDeleteId = batchDeleteModel._id;
-    done();
   });
 
-  afterEach((done) => {
-    async.forEach(
-      [SiteSettings, BatchDelete],
-      (model, doneDeleting) => {
-        model
-          .deleteMany({})
-          .then(() => doneDeleting())
-          .catch((err) => doneDeleting(err));
-      },
-      done
-    );
+  afterEach(() => {
+    return new Promise((resolve, reject) => {
+      async.forEach(
+        [SiteSettings, BatchDelete],
+        (model, doneDeleting) => {
+          model
+            .deleteMany({})
+            .then(() => doneDeleting())
+            .catch((err) => doneDeleting(err));
+        },
+        (err) => {
+          err ? reject(err) : resolve();
+        }
+      );
+    });
   });
 
   it('should schedule the next run and add to queue if the time is in window', async () => {

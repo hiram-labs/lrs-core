@@ -27,11 +27,12 @@ test('SourceResults generate correct data', () => {
 
 test('SourceResults should render', () => {
   const wrappedSourceResults = withInsertCSS(SourceResults);
-
-  const criterion = ReactTestRenderer.create(
-    <wrappedSourceResults results={data} labels={series} axes={axes} />
-  ).toJSON();
-
+  const Element = React.createElement(wrappedSourceResults, {
+    results: data,
+    labels: series,
+    axes: axes
+  });
+  const criterion = ReactTestRenderer.create(Element).toJSON();
   expect(criterion).toMatchSnapshot();
 });
 

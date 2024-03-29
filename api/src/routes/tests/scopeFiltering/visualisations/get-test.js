@@ -64,7 +64,7 @@ describe('API HTTP GET visualisations route scope filtering', () => {
     return assertNodes({ basicClient, expectedStatus: 403 }, 0);
   });
 
-  it('should return only visualisations attached to dashboard with dashboard token ', async () => {
+  it('should return only visualisations attached to dashboard with dashboard token', async () => {
     const visualisation1 = await createVisualisation();
     const visualisation2 = await createVisualisation();
     await createVisualisation();
