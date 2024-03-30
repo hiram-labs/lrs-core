@@ -1,8 +1,8 @@
 export {
-  modelsSelector,
+  // modelsSelector, // HERE flagged by linter (looks like consumers are importing from 'ui/redux/modules/models/selectors')
   modelsSchemaSelector,
   modelsSchemaIdSelector,
-  modelsPickSelector,
+  // modelsPickSelector, // HERE flagged by linter
   modelsByFilterSelector,
   isLoadingModelSelector,
   shouldFetchModelSelector
@@ -20,8 +20,8 @@ export {
 export { statementQuerySelector, statementTimezoneSelector } from 'ui/redux/modules/statements';
 export {
   isAuthenticatedSelector,
-  isLoggingOutSelector,
-  isAuthenticatedWithOrgSelector,
+  // isLoggingOutSelector, // HERE flagged by linter
+  // isAuthenticatedWithOrgSelector, // HERE flagged by linter
   loggedInUserId,
   loggedInUserSelector,
   currentScopesSelector,

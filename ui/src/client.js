@@ -1,7 +1,6 @@
 /**
  * Client entry point
  */
-import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from 'ui/components/Root';

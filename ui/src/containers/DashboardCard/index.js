@@ -3,7 +3,7 @@ import Scroll from 'react-scroll';
 import * as _ from 'lodash';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import withStyles from 'isomorphic-style-loader/withStyles';
 import { loggedInUserId } from 'ui/redux/selectors';
 import { actions, routeNodeSelector } from 'redux-router5';
 import { activeOrgIdSelector } from 'ui/redux/modules/router';

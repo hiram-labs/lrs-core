@@ -6,7 +6,6 @@ import { renderToString } from 'react-dom/server';
 import { createDashboardJWT } from 'api/auth/jwt';
 import * as sharingScopes from 'lib/constants/sharingScopes';
 import { isMatch } from 'micromatch';
-import parseUrl from 'url-parse';
 import { decodeLoginTokenAction, setActiveTokenAction } from 'ui/redux/modules/auth';
 import LLApiClient from 'ui/utils/LLApiClient';
 import createStore from 'ui/redux/create';
@@ -61,10 +60,10 @@ export default (req, res) => {
 
         switch (dashboard.visibility) {
           case sharingScopes.VALID_DOMAINS: {
-            const parsedUrl = parseUrl(req.get('Referer'));
+            const parsedUrl = new URL(req.get('Referer'));
             const invalidReferer = !isMatch(parsedUrl.hostname, dashboard.validDomains);
             if (invalidReferer) {
-              const parsedSiteUrl = parseUrl(process.env.SITE_URL);
+              const parsedSiteUrl = new URL(process.env.SITE_URL);
               const siteIsntReferer = !isMatch(parsedUrl.hostname, parsedSiteUrl.hostname);
               if (siteIsntReferer) {
                 return res

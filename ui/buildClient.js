@@ -27,8 +27,7 @@ const webpackConfig = getWebpackConfig({
       from: path.resolve(sourceDir, 'static'),
       to: path.resolve(outputDir, 'static')
     }
-  ],
-  clientFreeVariables: {}
+  ]
 });
 
 /**

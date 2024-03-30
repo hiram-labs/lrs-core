@@ -48,13 +48,9 @@ const getToken = async () => {
   );
 };
 
-// RUNTIME_NODE_ENV=test node cli/dist/server seed reset
+// node cli/dist/server seed <reset|getToken>
 export default async function (action) {
   try {
-    if (process.env.RUNTIME_NODE_ENV !== 'test') {
-      throw new Error('invalid environment');
-    }
-
     switch (action) {
       case 'reset': {
         logger.info('Seeding the database');

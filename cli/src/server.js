@@ -123,7 +123,7 @@ program.command('testQueryBuilderCache').action(testQueryBuilderCache);
 // node cli/dist/server testQueryBuilderCache
 
 program.command('seed [action]').action(seed);
-// RUNTIME_NODE_ENV=test node cli/dist/server seed reset
+// node cli/dist/server seed <reset|getToken>
 
 const dateType = (val) => new Date(val);
 

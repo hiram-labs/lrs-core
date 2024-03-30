@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import withStyles from 'isomorphic-style-loader/withStyles';
 import { compose } from 'recompose';
 import Link from 'ui/containers/Link';
 import { activeOrgIdSelector } from 'ui/redux/modules/router';

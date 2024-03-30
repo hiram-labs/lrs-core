@@ -1,3 +1,3 @@
-import reducer, { selectors } from './reducer';
+import reducer from './reducer';
 
-export { reducer as default, selectors };
+export { reducer as default };

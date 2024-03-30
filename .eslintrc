@@ -14,16 +14,11 @@
     }
   },
   "globals": {
+    //actual values are set in getWebpackConfig.js but these defaults are to prevent no-undef linting errors
     "__DEVELOPMENT__": true,
-    "__CLIENT__": true,
-    "__SERVER__": true,
     "__DEVTOOLS__": true,
-    "__SITE_URL__": true,
-    "__DISABLE_SSR__": true,
-    "__GOOGLE_ENABLED__": true,
-    "socket": true,
-    "webpackIsomorphicTools": true,
-    "cy": true
+    "__CLIENT__": true,
+    "__SERVER__": true
   },
   "rules": {
     //2-error 1-warning 0-pass
