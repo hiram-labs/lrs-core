@@ -20,7 +20,7 @@ export const CollapsedSectionWrapper = styled.a`
   align-self: flex-start;
   white-space: normal;
   word-break: break-all;
-  ${(props) => (props.isUsed && 'color: #F5AB35;') || 'color: #687B88;'}
+  ${(props) => (props.isUsed && 'color: #97c11f;') || 'color: #687B88;'}
 `;
 
 export const TopLevelSectionsContainer = styled(Sections)`

@@ -4,7 +4,7 @@ import InputFields from './InputFields';
 import { TableData } from './TableData';
 
 const TableHeader = styled.th`
-  background-color: #525252;
+  background-color: #28282b;
   color: #ffffff;
   text-align: left;
   padding: 8px;

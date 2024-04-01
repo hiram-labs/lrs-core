@@ -14,14 +14,14 @@ const resetState = async () => {
   await doMigrations({ migrations: v2Migrations });
 
   // add a user
-  await createSiteAdmin('test@learningpool.com', 'Test organisation', 'password0', {});
+  await createSiteAdmin('test@v360energy.com', 'Test organisation', 'password0', {});
 
   logger.info('Reset success');
 };
 
 const getToken = async () => {
   const user = await User.findOne({
-    email: 'test@learningpool.com'
+    email: 'test@v360energy.com'
   });
 
   const organisation = await Organisation.findOne({

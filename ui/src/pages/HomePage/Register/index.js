@@ -51,7 +51,8 @@ const Register = ({ setRegistered }) => {
                       className={classNames({
                         'form-group': true,
                         'has-error': error
-                      })}>
+                      })}
+                    >
                       <label htmlFor={codeId}>Registration Code</label>
                       <input autoFocus id={codeId} className="form-control" type="text" ref={codeRef} />
                       {error && (
@@ -124,7 +125,8 @@ const Register = ({ setRegistered }) => {
                 className="btn btn-primary pull-right"
                 href="https://learningpool.com/solutions/learning-record-store-learning-locker"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 Get Learning Locker Data Cloud
               </RegistrationLinkAccented>
             </div>
@@ -149,14 +151,16 @@ const Register = ({ setRegistered }) => {
                 className="btn btn-primary pull-right"
                 href="https://learningpool.com/register-locker"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 Register
               </RegistrationLink>
 
               <RegistrationLink
                 className="btn btn-primary pull-right"
                 onClick={() => setModalOpen(true)}
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 Enter a Registration Code
               </RegistrationLink>
 

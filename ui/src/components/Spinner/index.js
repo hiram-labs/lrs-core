@@ -8,10 +8,10 @@ const Spinner = styled.div`
   width: 30px;
   margin: auto;
   animation: ${rotation} 0.6s infinite linear;
-  border-left: 4px solid rgba(245, 170, 53, 0.15);
-  border-right: 4px solid rgba(245, 170, 53, 0.15);
-  border-bottom: 4px solid rgba(245, 170, 53, 0.15);
-  border-top: 4px solid rgba(245, 170, 53, 0.8);
+  border-left: 4px solid rgba(151, 192, 31, 0.15);
+  border-right: 4px solid rgba(151, 192, 31, 0.15);
+  border-bottom: 4px solid rgba(151, 192, 31, 0.15);
+  border-top: 4px solid rgba(151, 192, 31, 0.8);
   border-radius: 100%;
 `;
 

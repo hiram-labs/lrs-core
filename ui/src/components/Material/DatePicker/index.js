@@ -28,12 +28,12 @@ const DatePickerWrapper = styled.div`
 // Here you should put the styles related to date picker dialog
 const StyledDatePicker = styled(DatePicker)`
   .${headerClassName} {
-    background: rgb(245, 171, 53);
+    background: rgb(151, 193, 31);
   }
 
   .${activeClassName} {
     & > span {
-      background: rgb(245, 171, 53) !important;
+      background: rgb(151, 193, 31) !important;
     }
   }
 
@@ -44,7 +44,7 @@ const StyledDatePicker = styled(DatePicker)`
   }
 
   .${yearsClassName} .${activeClassName} {
-    color: rgb(245, 171, 53);
+    color: rgb(151, 193, 31);
   }
 `;
 

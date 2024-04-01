@@ -32,7 +32,7 @@ import Register from './Register';
 
 const Underline = styled.div`
   height: 0;
-  border-bottom: 2px solid #dda476;
+  border-bottom: 2px solid #7fba5f;
   width: 250px;
   margin: 0 auto;
 `;

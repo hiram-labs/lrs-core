@@ -21,7 +21,7 @@ export const InputWrapper = styled.div`
     flex-grow: 1;
     height: 36px;
     padding: 0 8px;
-    outline-color: #f5ab35;
+    outline-color: #97c11f;
     text-overflow: ellipsis;
   }
 `;

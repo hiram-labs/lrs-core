@@ -9,8 +9,8 @@ const thumbClassName = 'ms-thumb';
 
 const StyledSwitch = styled(Switch)`
   .${rippleClassName} {
-    background-color: rgb(245, 171, 53);
-    border-color: rgb(245, 171, 53);
+    background-color: rgb(151, 193, 31);
+    border-color: rgb(151, 193, 31);
   }
 
   .${offClassName} {
@@ -22,10 +22,10 @@ const StyledSwitch = styled(Switch)`
   }
 
   .${onClassName} {
-    background-color: rgba(245, 171, 53, 0.26);
+    background-color: rgba(151, 193, 31, 0.26);
 
     .${thumbClassName} {
-      background-color: rgb(245, 171, 53);
+      background-color: rgb(151, 193, 31);
     }
   }
 `;

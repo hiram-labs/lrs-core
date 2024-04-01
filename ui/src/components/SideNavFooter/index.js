@@ -11,10 +11,10 @@ const Footer = styled.div`
 
 export default () => (
   <Footer>
-    <a href="https://ht2ltd.zendesk.com/hc/en-us/categories/115000129989-Learning-Locker">Help centre</a>
+    <a href="mailto:support@v360energy.com">Help centre</a>
     <div>Powered by</div>
-    <a href="http://learninglocker.net" target="_blank" rel="noopener noreferrer">
-      Learning Locker Cloud
+    <a href="https://github.com/LearningLocker/learninglocker" target="_blank" rel="noopener noreferrer">
+      Learning Locker
     </a>
   </Footer>
 );

@@ -14,7 +14,7 @@ const ButtonWrapper = styled.div`
     color: #ccc;
 
     &:hover {
-      color: #f5ab35;
+      color: #97c11f;
     }
   }
 `;

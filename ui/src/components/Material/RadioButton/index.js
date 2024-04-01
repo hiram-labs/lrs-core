@@ -10,16 +10,16 @@ const radioClassName = 'rb-radio';
 const StyledRadioButton = styled(RadioButton)`
   && {
     .${radioCheckedClassName} {
-      border-color: rgb(245, 171, 53);
+      border-color: rgb(151, 193, 31);
     }
 
     .${radioClassName}:before, .${radioCheckedClassName}:before {
-      background-color: rgb(245, 171, 53);
+      background-color: rgb(151, 193, 31);
     }
 
     .${radioClassName} .${rippleClassName}, .${radioCheckedClassName} .${rippleClassName} {
-      background-color: rgb(245, 171, 53);
-      border-color: rgb(245, 171, 53);
+      background-color: rgb(151, 193, 31);
+      border-color: rgb(151, 193, 31);
     }
   }
 `;

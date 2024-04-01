@@ -7,7 +7,7 @@ const valueClassName = 'value';
 const StyledProgressBar = styled(ProgressBar)`
   && {
     .${valueClassName} {
-      background-color: rgb(245, 171, 53);
+      background-color: rgb(151, 193, 31);
     }
   }
 `;

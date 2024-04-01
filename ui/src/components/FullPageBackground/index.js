@@ -81,17 +81,17 @@ const FullPageBackground = ({ version, children, width = 800 }) => (
   <Background>
     <Centered>
       <img alt="logo" src={logoImg} />
-      <Headline>making learning measurable</Headline>
+      <Headline>training with impact</Headline>
       <div style={{ width }}>{children}</div>
       <Copyright>
         &copy; {new Date().getFullYear()}&nbsp;
         <a
-          href="https://www.learningpool.com"
-          title="Learning Pool - Innovation. Passion. Learning."
+          href="https://www.v360energy.com"
+          title="v360energy - xrtemis platform"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learning Pool
+          XRtemis
         </a>
       </Copyright>
       {versionDisplay(version)}

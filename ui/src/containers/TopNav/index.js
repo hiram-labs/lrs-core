@@ -18,7 +18,7 @@ const TopNavWrapper = styled.div`
 `;
 
 const NavbarTopNav = styled.div`
-  background-color: #525252;
+  background-color: #28282b;
   border-color: #d88a0e;
   border: none;
   height: 56px; /* see SaveBar/styles.css .container .value {top} */
