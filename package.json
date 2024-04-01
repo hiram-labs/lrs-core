@@ -42,7 +42,7 @@
     "test": "npm run test-api && npm run test-lib && npm run test-worker && npm run test-ui && npm run test-cli",
     "migrate": "node cli/dist/server migrateMongo --up",
     "rollback": "node cli/dist/server migrateMongo --down last",
-    "clean": "rimraf cli/dist worker/dist api/dist ui/dist cli/src/node_modules worker/src/node_modules api/src/node_modules ui/src/node_modules",
+    "clean": "rimraf cli/dist worker/dist api/dist ui/dist cli/src/node_modules worker/src/node_modules api/src/node_modules ui/src/node_modules node_modules/.cache",
     "fmt": "prettier './**/*.{json,js}' --write"
   },
   "dependencies": {
