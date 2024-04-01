@@ -1,17 +1,17 @@
-var postcssUrl = require('postcss-url');
-var postcssCustomProperties = require('postcss-custom-properties');
-var postcssCustomMedia = require('postcss-custom-media');
-var postcssMediaMinmax = require('postcss-media-minmax');
-var postcssCustomSelectors = require('postcss-custom-selectors');
-var postcssCalc = require('postcss-calc');
-var postcssNesting = require('postcss-nesting');
-var postcssNested = require('postcss-nested');
-var postcssColorFunction = require('postcss-color-function');
-var pixrem = require('pixrem');
-var postcssSelectorMatches = require('postcss-selector-matches');
-var postcssSelectorNot = require('postcss-selector-not');
-var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
-var autoprefixer = require('autoprefixer');
+// const postcssUrl = require('postcss-url');
+const postcssCustomProperties = require('postcss-custom-properties');
+const postcssCustomMedia = require('postcss-custom-media');
+const postcssMediaMinmax = require('postcss-media-minmax');
+const postcssCustomSelectors = require('postcss-custom-selectors');
+const postcssCalc = require('postcss-calc');
+const postcssNesting = require('postcss-nesting');
+const postcssNested = require('postcss-nested');
+const postcssColorFunction = require('postcss-color-function');
+const pixrem = require('pixrem');
+const postcssSelectorMatches = require('postcss-selector-matches');
+const postcssSelectorNot = require('postcss-selector-not');
+const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
+// const autoprefixer = require('autoprefixer');
 
 module.exports = {
   plugins: [
@@ -54,16 +54,16 @@ module.exports = {
     postcssSelectorNot,
     // Postcss flexbox bug fixer
     // https://github.com/luisrudge/postcss-flexbugs-fixes
-    postcssFlexbugsFixes,
+    postcssFlexbugsFixes
     // Add vendor prefixes to CSS rules using values from caniuse.com
     // https://github.com/postcss/autoprefixer
-    autoprefixer({
-      browsers: [
-        '>1%',
-        'last 4 versions',
-        'Firefox ESR',
-        'not ie < 9' // React doesn't support IE8 anyway
-      ]
-    })
+    // autoprefixer({
+    //   browsers: [
+    //     '>1%',
+    //     'last 4 versions',
+    //     'Firefox ESR',
+    //     'not ie < 9' // React doesn't support IE8 anyway
+    //   ]
+    // })
   ]
 };
