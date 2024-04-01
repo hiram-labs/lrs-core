@@ -1,6 +1,6 @@
-import { map } from 'lodash';
 import createSagaMiddleware from 'redux-saga';
-import { fork } from 'redux-saga/effects';
+import { fork, all } from 'redux-saga/effects';
+import { map } from 'lodash';
 import { sagas as authSagas } from './auth';
 import { sagas as dashboardSagas } from './dashboard';
 import { sagas as paginationSagas } from './pagination';
@@ -24,7 +24,7 @@ export const sagaMiddleware = createSagaMiddleware();
 const runSaga = (saga) => fork(saga);
 
 export default function* rootSaga() {
-  yield [
+  yield all([
     ...map(authSagas, runSaga),
     ...map(dashboardSagas, runSaga),
     ...map(paginationSagas, runSaga),
@@ -42,5 +42,5 @@ export default function* rootSaga() {
     ...map(visualisationSagas, runSaga),
     ...map(userOrganisationsSagas, runSaga),
     ...map(userOrganisationSettingsSagas, runSaga)
-  ];
+  ]);
 }

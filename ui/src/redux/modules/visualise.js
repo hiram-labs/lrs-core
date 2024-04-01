@@ -328,7 +328,7 @@ function* handleVisualisation(action) {
 
 export function* watchUpdateVisualisation() {
   if (__CLIENT__) {
-    yield* takeEvery(UPDATE_MODEL, handleVisualisation);
+    yield takeEvery(UPDATE_MODEL, handleVisualisation);
   }
 }
 
