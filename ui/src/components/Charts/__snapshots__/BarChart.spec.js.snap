@@ -3,7 +3,7 @@
 exports[`BarChart should render 1`] = `
 <h4
   style={
-    Object {
+    {
       "marginTop": 20,
       "textAlign": "center",
       "width": "100%",

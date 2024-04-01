@@ -22,14 +22,14 @@ exports[`PieChart should render 1`] = `
   <div>
     <div
       style={
-        Object {
+        {
           "fontSize": "0.9em",
         }
       }
     >
       <div
         style={
-          Object {
+          {
             "backgroundColor": "#ffffff",
             "display": "inline-block",
             "height": "12px",
@@ -48,14 +48,14 @@ exports[`PieChart should render 1`] = `
     </div>
     <div
       style={
-        Object {
+        {
           "fontSize": "0.9em",
         }
       }
     >
       <div
         style={
-          Object {
+          {
             "backgroundColor": "#123456",
             "display": "inline-block",
             "height": "12px",
@@ -75,16 +75,15 @@ exports[`PieChart should render 1`] = `
   </div>
   <div
     style={
-      Object {
+      {
         "height": "100%",
         "width": "100%",
       }
     }
   >
     <div
-      className={undefined}
       style={
-        Object {
+        {
           "height": 0,
           "overflow": "visible",
           "width": 0,
@@ -98,7 +97,7 @@ exports[`PieChart should render 1`] = `
 exports[`PieChart should render no data 1`] = `
 <h4
   style={
-    Object {
+    {
       "marginTop": 20,
       "textAlign": "center",
       "width": "100%",

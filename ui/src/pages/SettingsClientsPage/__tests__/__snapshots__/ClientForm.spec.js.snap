@@ -350,16 +350,12 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
       className="form-group"
     >
       <label
-        className="sc-bdVaJa DpnOa"
+        className="sc-bdVaJa iBkIXo"
         data-react-toolbox="checkbox"
-        onMouseEnter={undefined}
-        onMouseLeave={undefined}
       >
         <input
           checked={false}
-          className={undefined}
           disabled={false}
-          name={undefined}
           onChange={[Function]}
           onClick={[Function]}
           type="checkbox"
@@ -368,10 +364,8 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
           className="check"
           data-react-toolbox="check"
           onMouseDown={[Function]}
-          style={undefined}
         />
         <span
-          className={undefined}
           data-react-toolbox="label"
         >
           Enabled?
@@ -421,7 +415,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
       <p
         className="sc-bxivhb fZLCcU help-block"
         style={
-          Object {
+          {
             "wordWrap": "break-word",
           }
         }
@@ -439,16 +433,12 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
         Overall Scopes
       </label>
       <label
-        className="sc-bdVaJa DpnOa"
+        className="sc-bdVaJa iBkIXo"
         data-react-toolbox="checkbox"
-        onMouseEnter={undefined}
-        onMouseLeave={undefined}
       >
         <input
           checked={false}
-          className={undefined}
           disabled={false}
-          name={undefined}
           onChange={[Function]}
           onClick={[Function]}
           type="checkbox"
@@ -457,26 +447,20 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
           className="check"
           data-react-toolbox="check"
           onMouseDown={[Function]}
-          style={undefined}
         />
         <span
-          className={undefined}
           data-react-toolbox="label"
         >
           API All
         </span>
       </label>
       <label
-        className="sc-bdVaJa DpnOa"
+        className="sc-bdVaJa iBkIXo"
         data-react-toolbox="checkbox"
-        onMouseEnter={undefined}
-        onMouseLeave={undefined}
       >
         <input
           checked={false}
-          className={undefined}
           disabled={false}
-          name={undefined}
           onChange={[Function]}
           onClick={[Function]}
           type="checkbox"
@@ -485,10 +469,8 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
           className="check"
           data-react-toolbox="check"
           onMouseDown={[Function]}
-          style={undefined}
         />
         <span
-          className={undefined}
           data-react-toolbox="label"
         >
           Delete statements (not covered by All scope)
@@ -507,7 +489,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
     >
       <div>
         <div
-          className="sc-bwzfXH jLULoW"
+          className="sc-bwzfXH cLKMqF"
           data-react-toolbox="dropdown"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -519,14 +501,10 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
           >
             <input
               className=""
-              defaultValue={undefined}
               disabled={false}
               id="lrsInput"
-              maxLength={undefined}
-              name={undefined}
               onChange={[Function]}
               onClick={[Function]}
-              onKeyPress={undefined}
               readOnly={true}
               required={false}
               role="input"
@@ -534,9 +512,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
               type={null}
               value=""
             />
-            <span
-              className={undefined}
-            />
+            <span />
             <label
               className=""
             >

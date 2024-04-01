@@ -8,8 +8,8 @@ exports[`ConfigureUpload should render 1`] = `
     <ColumnHeaderEditor
       disabled={false}
       model={
-        Object {
-          "csvHeaders": Array [
+        Immutable.Map {
+          "csvHeaders": Immutable.List [
             "test1",
             "test2",
           ],
@@ -37,8 +37,8 @@ exports[`ConfigureUpload should render with disabled 1`] = `
     <ColumnHeaderEditor
       disabled={true}
       model={
-        Object {
-          "csvHeaders": Array [
+        Immutable.Map {
+          "csvHeaders": Immutable.List [
             "test1",
             "test2",
           ],
@@ -57,9 +57,9 @@ exports[`ConfigureUpload should render with errors 1`] = `
     <ColumnHeaderEditor
       disabled={false}
       model={
-        Object {
-          "errors": Object {
-            "messages": Object {
+        Immutable.Map {
+          "errors": Immutable.Map {
+            "messages": Immutable.Map {
               "structure": "Structure is invalid",
             },
           },

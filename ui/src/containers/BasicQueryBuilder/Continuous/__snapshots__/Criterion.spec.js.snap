@@ -124,7 +124,6 @@ exports[`BasicQueryBuilder -> Continuous Criterion should render criterion with 
       className="c7"
     >
       <div
-        className={undefined}
         data-react-toolbox="date-picker"
       >
         <div
@@ -133,10 +132,7 @@ exports[`BasicQueryBuilder -> Continuous Criterion should render criterion with 
         >
           <input
             className="dp-inputElement undefined"
-            defaultValue={undefined}
             disabled={false}
-            maxLength={undefined}
-            name={undefined}
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -147,9 +143,7 @@ exports[`BasicQueryBuilder -> Continuous Criterion should render criterion with 
             type="text"
             value="31 October 1986"
           />
-          <span
-            className={undefined}
-          />
+          <span />
         </div>
       </div>
     </div>

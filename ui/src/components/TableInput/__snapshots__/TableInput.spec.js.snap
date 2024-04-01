@@ -61,7 +61,7 @@ exports[`TableInput Should render table input 1`] = `
         </td>
         <td
           style={
-            Object {
+            {
               "textAlign": "right",
             }
           }
@@ -82,7 +82,7 @@ exports[`TableInput Should render table input 1`] = `
     className="btn btn-sm btn-inverse"
     onClick={[Function]}
     style={
-      Object {
+      {
         "width": "33px",
       }
     }

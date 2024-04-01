@@ -13,7 +13,7 @@ exports[`PersonasImports with items should render 1`] = `
       >
         <button
           className="btn btn-primary btn-sm"
-          onClick={[Function]}
+          onClick={[MockFunction]}
         >
           <i
             className="ion ion-plus"
@@ -32,7 +32,7 @@ exports[`PersonasImports with items should render 1`] = `
     >
       <withProps(Connect(WithModels))
         ModelForm={[Function]}
-        filter={Object {}}
+        filter={Immutable.Map {}}
         getDescription={[Function]}
       />
     </div>

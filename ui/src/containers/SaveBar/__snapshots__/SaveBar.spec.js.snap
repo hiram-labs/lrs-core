@@ -8,16 +8,14 @@ exports[`SaveBar should render save bar COMPLETED 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={100}
-    className="linear sc-bxivhb guboWi"
+    className="linear sc-bxivhb gwvjKI"
     data-react-toolbox="progress-bar"
-    disabled={undefined}
   >
     <div>
       <span
-        className={undefined}
         data-ref="buffer"
         style={
-          Object {
+          {
             "MsTransform": "scaleX(0)",
             "WebkitTransform": "scaleX(0)",
             "transform": "scaleX(0)",
@@ -28,7 +26,7 @@ exports[`SaveBar should render save bar COMPLETED 1`] = `
         className="value"
         data-ref="value"
         style={
-          Object {
+          {
             "MsTransform": "scaleX(1)",
             "WebkitTransform": "scaleX(1)",
             "transform": "scaleX(1)",
@@ -56,16 +54,14 @@ exports[`SaveBar should render save bar FAILED 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={100}
-    className="linear sc-bxivhb kOaAkp"
+    className="linear sc-bxivhb lgwOhK"
     data-react-toolbox="progress-bar"
-    disabled={undefined}
   >
     <div>
       <span
-        className={undefined}
         data-ref="buffer"
         style={
-          Object {
+          {
             "MsTransform": "scaleX(0)",
             "WebkitTransform": "scaleX(0)",
             "transform": "scaleX(0)",
@@ -76,7 +72,7 @@ exports[`SaveBar should render save bar FAILED 1`] = `
         className="value"
         data-ref="value"
         style={
-          Object {
+          {
             "MsTransform": "scaleX(1)",
             "WebkitTransform": "scaleX(1)",
             "transform": "scaleX(1)",
@@ -104,20 +100,16 @@ exports[`SaveBar should render save bar IN_PROGRESS 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={100}
-    className="linear sc-bxivhb fGBlup"
+    className="linear sc-bxivhb etlQjQ"
     data-react-toolbox="progress-bar"
-    disabled={undefined}
   >
     <div>
       <span
-        className={undefined}
         data-ref="buffer"
-        style={undefined}
       />
       <span
         className="value"
         data-ref="value"
-        style={undefined}
       />
     </div>
   </div>

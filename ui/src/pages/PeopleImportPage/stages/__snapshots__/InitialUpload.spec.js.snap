@@ -16,7 +16,7 @@ exports[`InitialUpload should render 1`] = `
         id="1-file-selector"
         placeholder="Upload the csv"
         style={
-          Object {
+          {
             "display": "none",
           }
         }
@@ -32,9 +32,9 @@ exports[`InitialUpload should render 1`] = `
     </span>
     <br />
     <div>
-      <Component
+      <_default
         model={
-          Object {
+          Immutable.Map {
             "_id": "1",
           }
         }
@@ -84,7 +84,7 @@ exports[`InitialUpload should render upload button IN_PROGRESS 1`] = `
   <i
     className="icon ion-gear-a animated rotate infinite"
     style={
-      Object {
+      {
         "display": "block",
       }
     }

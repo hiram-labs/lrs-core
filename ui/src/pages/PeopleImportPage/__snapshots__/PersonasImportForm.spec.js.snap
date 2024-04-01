@@ -20,10 +20,10 @@ exports[`PersonasImportForm should render the form in STAGE_CONFIGURE_FIELDS 1`]
   <withProps(Connect(WithModel))
     className="configureUpload"
     model={
-      Object {
+      Immutable.Map {
         "_id": "1",
-        "importStage": "STAGE_CONFIGURE_FIELDS",
         "title": "1 title",
+        "importStage": "STAGE_CONFIGURE_FIELDS",
         "updatedAt": "2017-10-31T06:06:06Z",
       }
     }
@@ -55,11 +55,11 @@ exports[`PersonasImportForm should render the form in STAGE_IMPORTED 1`] = `
       className="configureUpload"
       disabled={true}
       model={
-        Object {
+        Immutable.Map {
           "_id": "1",
+          "title": "1 title",
           "importStage": "STAGE_IMPORTED",
           "importedAt": "2017-10-31T06:06:06Z",
-          "title": "1 title",
         }
       }
     />
@@ -106,10 +106,10 @@ exports[`PersonasImportForm should render the form in STAGE_UPLOAD 1`] = `
   <withState(Connect(withState(withHandlers(InitialUploadComponent))))
     className="initialUpload"
     model={
-      Object {
+      Immutable.Map {
         "_id": "1",
-        "importStage": "STAGE_UPLOAD",
         "title": "1 title",
+        "importStage": "STAGE_UPLOAD",
         "updatedAt": "2017-10-31T06:06:06Z",
       }
     }

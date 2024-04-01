@@ -28,7 +28,7 @@ exports[`SingleInput should render 1`] = `
   flex-grow: 1;
   height: 36px;
   padding: 0 8px;
-  outline-color: #F5AB35;
+  outline-color: #f5ab35;
   text-overflow: ellipsis;
 }
 
