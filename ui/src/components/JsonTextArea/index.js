@@ -13,7 +13,7 @@ const stateFromProps = ({ value }) => ({
 
 export default class JsonTextArea extends Component {
   static propTypes = {
-    value: PropTypes.instanceOf(Map), // eslint-disable-line react/no-unused-prop-types
+    value: PropTypes.instanceOf(Map),
     onChange: PropTypes.func,
     setReviver: PropTypes.func
   };
