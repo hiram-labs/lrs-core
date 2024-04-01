@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Iterable } from 'immutable';
-import withStyles from 'isomorphic-style-loader/withStyles';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Spinner from 'ui/components/Spinner';
 import { withModels } from 'ui/utils/hocs';
 import { loggedInUserId } from 'ui/redux/modules/auth';
