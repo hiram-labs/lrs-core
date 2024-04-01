@@ -67,6 +67,9 @@ const router = new express.Router();
 router.use(setNoCacheHeaders);
 
 router.get('', (req, res) => res.status(200).send('OK'));
+router.get(routes.VERSION, (req, res) => {
+  jsonSuccess(res)({ short: '8bf1379f', long: '8bf1379f', branch: 'master', tag: 'v1.0.0' });
+});
 router.get(routes.GOOGLE_AUTH, (req, res) => {
   const enabled = boolean(process.env.GOOGLE_ENABLED);
   jsonSuccess(res)({ enabled });

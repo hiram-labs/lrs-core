@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { setPropTypes, compose, lifecycle } from 'recompose';
 
-import { fetchAppData } from 'ui/redux/modules/app';
+import { getAppDataSelector, fetchAppData } from 'ui/redux/modules/app';
 import backgroundImg from 'ui/assets/background.png';
 import logoImg from 'ui/static/logo.png';
 
@@ -53,7 +53,7 @@ const enhance = compose(
   setPropTypes({
     children: PropTypes.node
   }),
-  connect(() => ({}), { fetchAppData }),
+  connect((state) => ({ version: getAppDataSelector('version')(state) }), { fetchAppData }),
   lifecycle({
     componentDidMount() {
       this.props.fetchAppData({ key: 'version' });
@@ -61,23 +61,40 @@ const enhance = compose(
   })
 );
 
-const FullPageBackground = ({ children, width = 800 }) => (
+const versionDisplay = (version) => {
+  if (!version.has('tag')) {
+    return <p>Loading version...</p>;
+  }
+  const tag = version.get('tag');
+  const branch = version.get('branch');
+  const long = version.get('long');
+  const short = version.get('short');
+
+  const longDisplay = `Build: ${branch} @ ${long}`;
+  const shortDisplay = `Build: ${branch} @ ${short}`;
+
+  const display = branch === 'master' || branch === 'HEAD' ? tag : shortDisplay;
+  return <p title={longDisplay}>{display}</p>;
+};
+
+const FullPageBackground = ({ version, children, width = 800 }) => (
   <Background>
     <Centered>
       <img alt="logo" src={logoImg} />
       <Headline>making learning measurable</Headline>
       <div style={{ width }}>{children}</div>
       <Copyright>
-        &copy; {new Date().getFullYear()}&nbsp;&nbsp; poweredBy&nbsp;&nbsp;
+        &copy; {new Date().getFullYear()}&nbsp;
         <a
-          href="https://github.com/LearningLocker"
-          title="Learning Locker - Learning Locker is the open source Learning Record Store for tracking learning data using the Experience API."
+          href="https://www.learningpool.com"
+          title="Learning Pool - Innovation. Passion. Learning."
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learning Locker
+          Learning Pool
         </a>
       </Copyright>
+      {versionDisplay(version)}
     </Centered>
   </Background>
 );
