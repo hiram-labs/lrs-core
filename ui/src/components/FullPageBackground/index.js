@@ -91,7 +91,7 @@ const FullPageBackground = ({ version, children, width = 800 }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          XRtemis
+          v360energy
         </a>
       </Copyright>
       {versionDisplay(version)}
