@@ -68,7 +68,7 @@ export default (req, res) => {
               if (siteIsntReferer) {
                 return res
                   .status(404)
-                  .send('Dashboard can only be embedded within valid domains, or opened directly from Learning Locker');
+                  .send('Dashboard can only be embedded within valid domains, or opened directly from XRTEMIS');
               }
             }
             res.set('X-Frame-Options', `ALLOW-FROM ${parsedUrl.origin}`);

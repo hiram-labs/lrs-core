@@ -27,7 +27,7 @@ exports[`SideNavFooter should render 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
-    Learning Locker Cloud
+    XRTEMIS Cloud
   </a>
 </div>
 `;

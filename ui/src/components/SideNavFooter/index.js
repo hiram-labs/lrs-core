@@ -14,7 +14,7 @@ export default () => (
     <a href="mailto:support@v360energy.com">Help centre</a>
     <div>Powered by</div>
     <a href="https://github.com/LearningLocker/learninglocker" target="_blank" rel="noopener noreferrer">
-      Learning Locker
+      XRTEMIS
     </a>
   </Footer>
 );
