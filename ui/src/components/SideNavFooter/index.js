@@ -13,8 +13,8 @@ export default () => (
   <Footer>
     <a href="mailto:support@v360energy.com">Help centre</a>
     <div>Powered by</div>
-    <a href="https://github.com/LearningLocker/learninglocker" target="_blank" rel="noopener noreferrer">
-      XRTEMIS
+    <a href="https://v360energy.com" target="_blank" rel="noopener noreferrer">
+      v360energy
     </a>
   </Footer>
 );
