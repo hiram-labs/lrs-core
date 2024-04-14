@@ -304,5 +304,5 @@ export default compose(
     id: SITE_SETTINGS_ID
   })),
   withModel,
-  withState('ok', 'setOk', true)
+  withState('ok', 'setOk', true) // -- HERE -- prevents the learning locker registration page from showing
 )(Home);

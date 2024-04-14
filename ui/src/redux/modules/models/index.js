@@ -10,7 +10,7 @@ import * as mergeEntitiesDuck from 'ui/redux/modules/models/mergeEntities';
 import * as autoSaveModelDuck from 'ui/redux/modules/models/autoSaveModel';
 import * as pollWhileDuck from 'ui/redux/modules/models/pollWhile';
 import {
-  // modelsSchemaSelector, // HERE flagged by linter
+  // modelsSchemaSelector, // -- HERE -- flagged by linter
   modelsSchemaIdSelector,
   modelsByFilterSelector
 } from 'ui/redux/modules/models/selectors';
@@ -168,7 +168,7 @@ export const modelsWorker = (schema, model, progressModel, force = false) => ({
 export const shouldFetchModelSelector = fetchModelDuck.selectors.shouldFetchModelSelector;
 export const isLoadingModelSelector = fetchModelDuck.selectors.isLoadingModelSelector;
 export {
-  // modelsSchemaSelector, // HERE flagged by linter
+  // modelsSchemaSelector, // -- HERE -- flagged by linter
   modelsSchemaIdSelector,
   modelsByFilterSelector
 };
