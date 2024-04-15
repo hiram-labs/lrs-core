@@ -29,7 +29,7 @@ describe('ClientForm', () => {
 
   test('AuthorityEditor renders correctly with mbox', () => {
     const authority = new Map({
-      mbox: 'mailto:hello@learninglocker.net',
+      mbox: 'mailto:support@v360energy.com',
       name: 'test name'
     });
     const tree = ReactTestRenderer.create(

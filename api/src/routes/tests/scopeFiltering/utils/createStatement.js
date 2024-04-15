@@ -26,7 +26,7 @@ export default (statement = {}, organisation = testId) =>
       authority: {
         objectType: 'Agent',
         name: 'New Client',
-        mbox: 'mailto:hello@learninglocker.net'
+        mbox: 'mailto:support@v360energy.com'
       },
       stored: '2017-04-27T09:41:54.606500+00:00',
       id: uuid(),

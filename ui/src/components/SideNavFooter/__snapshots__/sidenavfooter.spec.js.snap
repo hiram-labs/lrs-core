@@ -15,7 +15,7 @@ exports[`SideNavFooter should render 1`] = `
   className="c0"
 >
   <a
-    href="https://ht2ltd.zendesk.com/hc/en-us/categories/115000129989-Learning-Locker"
+    href="mailto:support@v360energy.com"
   >
     Help centre
   </a>
@@ -23,11 +23,11 @@ exports[`SideNavFooter should render 1`] = `
     Powered by
   </div>
   <a
-    href="http://learninglocker.net"
+    href="https://v360energy.com"
     rel="noopener noreferrer"
     target="_blank"
   >
-    XRTEMIS Cloud
+    v360energy
   </a>
 </div>
 `;

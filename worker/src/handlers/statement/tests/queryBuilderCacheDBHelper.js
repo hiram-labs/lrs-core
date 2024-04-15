@@ -8,85 +8,88 @@ export default class queryBuilderCacheDBHelper {
     async.parallel(
       {
         lrs: (insertDone) =>
-          Lrs.create(
-            {
-              _id: '560a679c0c5d017e4004714f',
-              title: 'TEST',
-              description: 'TEST LRS',
-              organisation: '561a679c0c5d017e4004714f'
-            }).then((result) => insertDone(null, result)).catch((err) => insertDone(err, null)),
+          Lrs.create({
+            _id: '560a679c0c5d017e4004714f',
+            title: 'TEST',
+            description: 'TEST LRS',
+            organisation: '561a679c0c5d017e4004714f'
+          })
+            .then((result) => insertDone(null, result))
+            .catch((err) => insertDone(err, null)),
         actorStatement: (insertDone) =>
-          Statement.create(
-            {
-              active: true,
-              _id: '561a679c0c5d017e4004714f',
-              lrs_id: '560a679c0c5d017e4004714f',
-              statement: {
-                version: '1.0.0',
-                actor: {
-                  objectType: 'Agent',
-                  mbox: 'mailto:ex@mple.com',
-                  name: 'Example'
-                },
-                verb: {
-                  id: 'http://www.example.com'
-                },
-                object: {
-                  objectType: 'Activity',
-                  id: 'http://www.example.com'
-                },
-                authority: {
-                  objectType: 'Agent',
-                  mbox: 'mailto:hello@learninglocker.net',
-                  name: 'New Client'
-                },
-                stored: '2016-04-13T12:34:58.392000+00:00',
-                timestamp: '2016-04-13T12:34:58.392000+00:00',
-                id: '5e56d6e9-e585-43c4-9bc4-52ba40c7ab4f'
+          Statement.create({
+            active: true,
+            _id: '561a679c0c5d017e4004714f',
+            lrs_id: '560a679c0c5d017e4004714f',
+            statement: {
+              version: '1.0.0',
+              actor: {
+                objectType: 'Agent',
+                mbox: 'mailto:ex@mple.com',
+                name: 'Example'
               },
-              client_id: '56093359f26e8f31ec48aad1',
-              voided: false,
-              timestamp: '2016-04-15T11:21:27.000Z',
-              updated_at: '2016-04-15T11:21:27.705Z'
-            }).then((result) => insertDone(null, result)).catch((err) => insertDone(err, null)),
+              verb: {
+                id: 'http://www.example.com'
+              },
+              object: {
+                objectType: 'Activity',
+                id: 'http://www.example.com'
+              },
+              authority: {
+                objectType: 'Agent',
+                mbox: 'mailto:support@v360energy.com',
+                name: 'New Client'
+              },
+              stored: '2016-04-13T12:34:58.392000+00:00',
+              timestamp: '2016-04-13T12:34:58.392000+00:00',
+              id: '5e56d6e9-e585-43c4-9bc4-52ba40c7ab4f'
+            },
+            client_id: '56093359f26e8f31ec48aad1',
+            voided: false,
+            timestamp: '2016-04-15T11:21:27.000Z',
+            updated_at: '2016-04-15T11:21:27.705Z'
+          })
+            .then((result) => insertDone(null, result))
+            .catch((err) => insertDone(err, null)),
         personStatement: (insertDone) =>
-          Statement.create(
-            {
-              active: true,
-              _id: '563a679c0c5d017e4004714f',
-              lrs_id: '560a679c0c5d017e4004714f',
-              person: {
-                _id: '56fe4ca6c2d1a09c15825792',
-                display: 'George'
+          Statement.create({
+            active: true,
+            _id: '563a679c0c5d017e4004714f',
+            lrs_id: '560a679c0c5d017e4004714f',
+            person: {
+              _id: '56fe4ca6c2d1a09c15825792',
+              display: 'George'
+            },
+            statement: {
+              version: '1.0.0',
+              actor: {
+                objectType: 'Agent',
+                mbox: 'mailto:ex@mple.com',
+                name: 'Example'
               },
-              statement: {
-                version: '1.0.0',
-                actor: {
-                  objectType: 'Agent',
-                  mbox: 'mailto:ex@mple.com',
-                  name: 'Example'
-                },
-                verb: {
-                  id: 'http://www.example.com'
-                },
-                object: {
-                  objectType: 'Activity',
-                  id: 'http://www.example.com'
-                },
-                authority: {
-                  objectType: 'Agent',
-                  mbox: 'mailto:hello@learninglocker.net',
-                  name: 'New Client'
-                },
-                stored: '2016-04-13T12:34:58.392000+00:00',
-                timestamp: '2016-04-13T12:34:58.392000+00:00',
-                id: '5e56d6e9-e585-43c4-9bc4-52ba40c7ab4g'
+              verb: {
+                id: 'http://www.example.com'
               },
-              client_id: '56093359f26e8f31ec48aad1',
-              voided: false,
-              timestamp: '2016-04-15T11:21:27.000Z',
-              updated_at: '2016-04-15T11:21:27.705Z'
-            }).then((result) => insertDone(null, result)).catch((err) => insertDone(err, null))
+              object: {
+                objectType: 'Activity',
+                id: 'http://www.example.com'
+              },
+              authority: {
+                objectType: 'Agent',
+                mbox: 'mailto:support@v360energy.com',
+                name: 'New Client'
+              },
+              stored: '2016-04-13T12:34:58.392000+00:00',
+              timestamp: '2016-04-13T12:34:58.392000+00:00',
+              id: '5e56d6e9-e585-43c4-9bc4-52ba40c7ab4g'
+            },
+            client_id: '56093359f26e8f31ec48aad1',
+            voided: false,
+            timestamp: '2016-04-15T11:21:27.000Z',
+            updated_at: '2016-04-15T11:21:27.705Z'
+          })
+            .then((result) => insertDone(null, result))
+            .catch((err) => insertDone(err, null))
       },
       (err, results) => {
         this.actorStatement = results.actorStatement;
@@ -100,7 +103,10 @@ export default class queryBuilderCacheDBHelper {
     async.forEach(
       [Statement, Lrs, QueryBuilderCache],
       (model, doneDeleting) => {
-        model.deleteMany({}).then(() => doneDeleting()).catch((err) => doneDeleting(err));
+        model
+          .deleteMany({})
+          .then(() => doneDeleting())
+          .catch((err) => doneDeleting(err));
       },
       done
     );

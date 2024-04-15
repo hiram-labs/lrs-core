@@ -2,7 +2,7 @@ import { boolean } from 'boolean';
 import defaultTo from 'lodash/defaultTo';
 
 const title = 'XRTEMIS';
-const description = 'The open source learning record store';
+const description = 'Training with impact';
 const isProduction = process.env.NODE_ENV === 'production';
 const host = process.env.UI_HOST || '127.0.0.1';
 const enableFrameguard = boolean(defaultTo(process.env.ENABLE_FRAMEGUARD, true));
@@ -37,8 +37,8 @@ export default {
         { property: 'og:title', content: title },
         { property: 'og:description', content: description },
         { property: 'og:card', content: 'summary' },
-        { property: 'og:site', content: '@andrewhickey' },
-        { property: 'og:creator', content: '@andrewhickey' },
+        { property: 'og:site', content: '@owusuk' },
+        { property: 'og:creator', content: '@owusuk' },
         { property: 'og:image', content: '' },
         { property: 'og:image:width', content: '200' },
         { property: 'og:image:height', content: '200' }

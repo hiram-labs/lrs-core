@@ -100,7 +100,7 @@ exports[`SaveBar should render save bar IN_PROGRESS 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={100}
-    className="linear sc-bxivhb etlQjQ"
+    className="linear sc-bxivhb fAoJQL"
     data-react-toolbox="progress-bar"
   >
     <div>
@@ -114,7 +114,7 @@ exports[`SaveBar should render save bar IN_PROGRESS 1`] = `
     </div>
   </div>
   <div
-    className="sc-htpNat hoqFTd"
+    className="sc-htpNat hZCAtA"
   >
     SAVING
   </div>

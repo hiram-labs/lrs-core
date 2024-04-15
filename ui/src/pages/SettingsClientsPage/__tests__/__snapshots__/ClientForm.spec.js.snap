@@ -165,7 +165,7 @@ exports[`ClientForm AuthorityEditor renders correctly with mbox 1`] = `
         onChange={[Function]}
         onKeyDown={[Function]}
         type="text"
-        value="mailto:hello@learninglocker.net"
+        value="mailto:support@v360energy.com"
       />
     </div>
   </div>
@@ -350,7 +350,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
       className="form-group"
     >
       <label
-        className="sc-bdVaJa iBkIXo"
+        className="sc-bdVaJa eIbCnh"
         data-react-toolbox="checkbox"
       >
         <input
@@ -433,7 +433,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
         Overall Scopes
       </label>
       <label
-        className="sc-bdVaJa iBkIXo"
+        className="sc-bdVaJa eIbCnh"
         data-react-toolbox="checkbox"
       >
         <input
@@ -455,7 +455,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
         </span>
       </label>
       <label
-        className="sc-bdVaJa iBkIXo"
+        className="sc-bdVaJa eIbCnh"
         data-react-toolbox="checkbox"
       >
         <input
@@ -489,7 +489,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
     >
       <div>
         <div
-          className="sc-bwzfXH cLKMqF"
+          className="sc-bwzfXH EFIjy"
           data-react-toolbox="dropdown"
           onBlur={[Function]}
           onFocus={[Function]}
