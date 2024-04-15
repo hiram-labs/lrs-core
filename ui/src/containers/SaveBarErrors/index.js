@@ -5,10 +5,11 @@ import { getAlertsSelector, deleteAlert } from 'ui/redux/modules/alerts';
 import styled from 'styled-components';
 
 const SaveBarErrorsContainer = styled.div`
-  top: 2.4rem;
-  position: absolute;
+  position: fixed;
+  top: 56px;
   right: 30px;
-  left: 25px;
+  left: 30px;
+  z-index: 1500;
 `;
 
 const onRemove =

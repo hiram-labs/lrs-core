@@ -148,16 +148,9 @@ const organisationHome = ({ route }) => {
       <AuthContainer>
         <Helmet title=" - Welcome" />
         <TopNav />
-        <div
-          className="container-fluid"
-          style={{
-            marginTop: '56px',
-            minHeight: '600px',
-            position: 'relative'
-          }}
-        >
+        <div className="container-fluid">
           <SideNav />
-          <div className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">{renderPage(name)}</div>
+          <div className="main">{renderPage(name)}</div>
         </div>
       </AuthContainer>
     </div>

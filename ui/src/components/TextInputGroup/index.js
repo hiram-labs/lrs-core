@@ -12,7 +12,7 @@ const Form = styled.form`
   flex-grow: 1;
   background-color: white;
   position: relative;
-  z-index: 9999;
+  z-index: 15;
   display: flex;
   right: 0;
 `;

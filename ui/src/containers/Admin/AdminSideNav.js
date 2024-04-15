@@ -22,7 +22,7 @@ const AdminSideNav = () => {
   const activeClass = `v-link-active ${activeLinkClassName}`;
 
   return (
-    <SideNavContainer className={'col-sm-3 col-md-2'}>
+    <SideNavContainer>
       <SideNavHeader>
         <OrgAvatar>
           <img alt="logo" src={DEFAULT_LOGO} />

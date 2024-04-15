@@ -7239,10 +7239,6 @@ div {
   border-bottom: 1px solid #f1f1f1;
 }
 
-.main {
-  padding-bottom: 40px;
-}
-
 /*!
 Ionicons, v2.0.0
 Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -14069,28 +14065,16 @@ a:focus {
 }
 
 .main {
-  /*margin-top:30px;*/
+  padding-left: 250px;
   padding-bottom: 40px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 750px) {
   .main {
-    /*margin-top:30px;*/
-    padding-bottom: 40px;
-    width: 75%;
-    float: left;
-    margin-left: 25%;
+    padding-left: 0;
   }
 }
-@media (max-width: 568px) {
-  .main {
-    /*margin-top:30px;*/
-    padding-bottom: 40px;
-    width: auto;
-    float: left;
-    margin-left: auto;
-  }
-}
+
 #topbar {
   position: relative;
   padding: calc(19px - 0.4rem) 0 19px 0;
@@ -14347,4 +14331,11 @@ a.dark-link {
 
 .row-no-padding > div:last-child {
   padding-right: 0px;
+}
+
+/* -- HERE -- additions */
+@media (max-width: 750px) {
+  .sidenav__container--hidden {
+    display: none !important;
+  }
 }

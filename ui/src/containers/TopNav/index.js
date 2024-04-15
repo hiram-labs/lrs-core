@@ -29,6 +29,15 @@ const NavbarTopNav = styled.div`
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 `;
 
+const HamburgerMenu = styled.div`
+  display: none;
+  margin-left: 15px;
+
+  @media (max-width: 750px) {
+    display: block;
+  }
+`;
+
 const NavbarBrand = styled.div`
   color: white;
   padding: 0;
@@ -54,6 +63,12 @@ class TopNav extends Component {
     user: new Map()
   };
 
+  onToggleHamburger = () => {
+    const sidenav = document.querySelector('.sidenav__container--responsive');
+    if (!sidenav) return;
+    sidenav.classList.toggle('sidenav__container--hidden');
+  };
+
   onClickSwitchOrg = () => {
     this.props.orgLogout();
   };
@@ -77,13 +92,20 @@ class TopNav extends Component {
     return (
       <TopNavWrapper>
         <NavbarTopNav className={'navbar navbar-fixed-top clearfix'} role="navigation">
-          <div className="navbar-header">
+          <div className="navbar-header" style={{ display: 'flex' }}>
+            <HamburgerMenu>
+              <div className="nav-icons">
+                <a className="pull-left option" title="Toggle Menu" onClick={this.onToggleHamburger}>
+                  <i className="icon ion-android-menu" />
+                </a>
+              </div>
+            </HamburgerMenu>
             <NavbarBrand>
               <img alt="banner img" src={bannerImg} />
             </NavbarBrand>
           </div>
           <div className="container-fluid">
-            <div id="navbar" className="nav-icons">
+            <div className="nav-icons">
               <a className="pull-right option" title="Logout" onClick={this.props.logout}>
                 <i className="icon ion-log-out" />
               </a>
