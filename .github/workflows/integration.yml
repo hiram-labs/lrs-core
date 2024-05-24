@@ -27,4 +27,4 @@ jobs:
         run: npm run build-all
 
       - name: Linting Code
-        run: npm run lint-ci
+        run: npm run lint
