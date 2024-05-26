@@ -30,7 +30,8 @@ class _LLApiClient {
   };
 
   constructRequest = (schema, query = {}, props = {}, body = null) => {
-    const url = formatUrl(`${routes.RESTIFY_PREFIX}/${schema}${props._id ? `/${props._id}` : ''}`);
+    const propsID = props._id ? `/${props._id}` : ''
+    const url = formatUrl(`${routes.RESTIFY_PREFIX}/${schema}${propsID}`);
     const data = {
       url,
       headers: {
