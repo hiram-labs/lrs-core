@@ -4,14 +4,13 @@
       "name": "API",
       "script": "api/dist/server",
       "cwd": ".",
-      "output": "./logs/stdout.log",
-      "error": "./logs/stderr.log",
-      "pid": "./pids/api.pid",
+      "output": "./logs/api_stdout.log",
+      "error": "./logs/api_stderr.log",
+      "pid_file": "./pids/api.pid",
       "instances": 1,
       "exec_mode": "cluster",
-      "detached": true,
       "watch": ["api/dist", ".env"],
-      "ignore_watch": [".map", "node_modules"],
+      "ignore_watch": ["node_modules"],
       "watch_options": {
         "usePolling": true
       }
@@ -20,42 +19,46 @@
       "name": "UIServer",
       "script": "ui/dist/server",
       "cwd": ".",
-      "output": "./logs/stdout.log",
-      "error": "./logs/stderr.log",
-      "pid": "./pids/ui.pid",
+      "output": "./logs/ui_stdout.log",
+      "error": "./logs/ui_stderr.log",
+      "pid_file": "./pids/ui.pid",
       "instances": 1,
       "exec_mode": "cluster",
-      "detached": true,
-      "wait_ready": true,
-      "listen_timeout": 30000
+      "watch": ["ui/dist", ".env"],
+      "ignore_watch": ["node_modules"],
+      "watch_options": {
+        "usePolling": true
+      }
     },
     {
       "name": "Worker",
       "script": "worker/dist/server",
       "cwd": ".",
-      "node_args": "--max-old-space-size=256 --max-semi-space-size=2",
-      "output": "./logs/stdout.log",
-      "error": "./logs/stderr.log",
-      "pid": "./pids/ui.pid",
+      "output": "./logs/worker_stdout.log",
+      "error": "./logs/worker_stderr.log",
+      "pid_file": "./pids/worker.pid",
       "instances": 1,
       "exec_mode": "cluster",
-      "detached": true,
       "watch": ["worker/dist", ".env"],
-      "wait_ready": true,
-      "listen_timeout": 30000
+      "ignore_watch": ["node_modules"],
+      "watch_options": {
+        "usePolling": true
+      }
     },
     {
       "name": "Scheduler",
       "script": "cli/dist/scheduler",
       "cwd": ".",
-      "output": "./logs/stdout.log",
-      "error": "./logs/stderr.log",
-      "pid": "./pids/scheduler.pid",
+      "output": "./logs/scheduler_stdout.log",
+      "error": "./logs/scheduler_stderr.log",
+      "pid_file": "./pids/scheduler.pid",
       "instances": 1,
       "exec_mode": "cluster",
       "watch": ["cli/dist", ".env"],
-      "detached": true,
-      "listen_timeout": 30000
+      "ignore_watch": ["node_modules"],
+      "watch_options": {
+        "usePolling": true
+      }
     }
   ]
 }
