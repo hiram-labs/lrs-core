@@ -30,10 +30,10 @@ export class DashboardCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEditOpen: null,
-      isDeleteOpen: null,
-      isDuplicateOpen: null,
-      isPrivacyOpen: null
+      isEditOpen: false,
+      isDeleteOpen: false,
+      isDuplicateOpen: false,
+      isPrivacyOpen: false
     };
   }
 

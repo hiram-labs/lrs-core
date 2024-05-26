@@ -4,6 +4,7 @@ import Portal from 'react-portal';
 import { compose, withHandlers, setPropTypes } from 'recompose';
 import { withModel } from 'ui/utils/hocs';
 import Input from 'ui/components/Material/Input';
+import { Map } from 'immutable';
 
 const enhance = compose(
   setPropTypes({
