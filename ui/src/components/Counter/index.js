@@ -102,7 +102,6 @@ const getCountFontsize = ({ height, width, hasBenchmark, hasContextLabel, maxSiz
     }
   } else if (width < 550) {
     fontSize = width / 60;
-    console.log(`fontSize: ${fontSize}`);
   }
   if (fontSize > 12) fontSize = 12;
   return `${fontSize}em`;

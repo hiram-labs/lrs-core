@@ -92,7 +92,7 @@ function* alertSaga(action) {
 
   let delay2 = delay1;
   if (delay1 < MIN_DELAY) {
-    // allways show atleast for 2 seconds
+    // always show at least for 2 seconds
     delay2 = MIN_DELAY;
   }
 
