@@ -8,7 +8,7 @@ const pointerClassName = 'tab-pointer';
 const StyledTabs = styled(Tabs)`
   && {
     .${pointerClassName} {
-      background-color: rgb(151, 193, 31);
+      background-color: rgb(194, 213, 0);
     }
 
     .${tabClassName} {

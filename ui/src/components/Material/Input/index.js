@@ -10,13 +10,13 @@ const fixedClassName = 'mi-fixed';
 
 const StyledInput = styled(Input)`
   .${inputElementClassName}:focus:not([disabled]):not([readonly]) ~ .${labelClassName}:not(.${fixedClassName}) {
-    color: rgb(151, 193, 31);
+    color: rgb(194, 213, 0);
   }
 
   .${barClassName} {
     &:before,
     &:after {
-      background-color: rgb(151, 193, 31);
+      background-color: rgb(194, 213, 0);
     }
   }
 `;

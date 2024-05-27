@@ -1,5 +1,5 @@
 import React from 'react';
-import DEFAULT_LOGO from 'ui/static/logos/default/default.gif';
+import blankImage from 'ui/static/blankImage.png';
 
 const getLogoSrc = (organisation) => {
   const orgId = organisation.get('_id');
@@ -7,7 +7,7 @@ const getLogoSrc = (organisation) => {
   return `/api/downloadlogo/${orgId}?t=${updatedAt}`;
 };
 
-const getSrc = (organisation) => (organisation.has('logo') ? getLogoSrc(organisation) : DEFAULT_LOGO);
+const getSrc = (organisation) => (organisation.has('logo') ? getLogoSrc(organisation) : blankImage);
 
 export default ({ organisation, style = {} }) => (
   <img role="presentation" style={style} alt="logo" src={getSrc(organisation)} />

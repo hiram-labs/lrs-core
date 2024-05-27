@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loggedInUserSelector, logout, orgLogout } from 'ui/redux/modules/auth';
 import { Map, List } from 'immutable';
-import bannerImg from 'ui/static/whiteLogo.png';
+import logoWhite from 'ui/static/logoWhite.png';
 import SaveBar from 'ui/containers/SaveBar';
 import styled from 'styled-components';
 
@@ -101,7 +101,7 @@ class TopNav extends Component {
               </div>
             </HamburgerMenu>
             <NavbarBrand>
-              <img alt="banner img" src={bannerImg} />
+              <img alt="banner img" src={logoWhite} />
             </NavbarBrand>
           </div>
           <div className="container-fluid">

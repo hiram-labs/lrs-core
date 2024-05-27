@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { setPropTypes, compose, lifecycle } from 'recompose';
 
 import { getAppDataSelector, fetchAppData } from 'ui/redux/modules/app';
-import backgroundImg from 'ui/assets/background.png';
-import logoImg from 'ui/static/logo.png';
+import backgroundImg from 'ui/static/background.png';
+import logo from 'ui/static/logo.png';
 
 const Background = styled.div`
   background-image: url('${backgroundImg}');
@@ -80,7 +80,7 @@ const versionDisplay = (version) => {
 const FullPageBackground = ({ version, children, width = 800 }) => (
   <Background>
     <Centered>
-      <img alt="logo" src={logoImg} />
+      <img alt="logo" src={logo} />
       <Headline>training with impact</Headline>
       <div style={{ width }}>{children}</div>
       <Copyright>

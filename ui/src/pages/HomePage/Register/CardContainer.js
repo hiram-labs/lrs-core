@@ -3,8 +3,8 @@ import { CardText } from 'react-toolbox/lib/card';
 
 export const CardContainer = styled(CardText)`
   color: #687b88;
-  background-color: white;
-  background-image: url('../../../assets/geometric-pattern.png');
+  background-color: red;
+  background-image: url('../../../static/geometricPattern.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

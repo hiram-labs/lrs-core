@@ -139,7 +139,7 @@ class Dashboard extends Component {
                 title="Share"
                 onClick={this.toggleSharing}
                 style={{
-                  backgroundColor: this.props.getMetadata('isSharing') ? '#97c11f' : null,
+                  backgroundColor: this.props.getMetadata('isSharing') ? '#c2d500' : null,
                   color: this.props.getMetadata('isSharing') ? 'white' : null,
                   marginRight: 0
                 }}

@@ -51,13 +51,13 @@ export const SideNavContainer = styled.div.attrs({ className: 'sidenav__containe
     color: #444;
 
     &:hover {
-      background-color: rgba(151, 193, 31, 0.801) !important;
+      background-color: rgba(194, 213, 0, 0.801) !important;
       color: white !important;
     }
 
     &:focus {
       outline: none;
-      color: rgba(151, 193, 31, 0.801);
+      color: rgba(194, 213, 0, 0.801);
     }
   }
 
@@ -85,9 +85,9 @@ export const SideNavContainer = styled.div.attrs({ className: 'sidenav__containe
         font-weight: 400;
 
         &.${activeLinkClassName}, &:hover {
-          color: #97c11f;
+          color: #c2d500;
           background: transparent;
-          box-shadow: inset 20px 0 0px -15px #97c11f;
+          box-shadow: inset 20px 0 0px -15px #c2d500;
         }
 
         i {
@@ -102,7 +102,7 @@ export const SideNavContainer = styled.div.attrs({ className: 'sidenav__containe
         li {
           background: #fafafa; /*#454241; */
           padding-left: 30px;
-          box-shadow: inset 20px 0 0px -15px #97c11f;
+          box-shadow: inset 20px 0 0px -15px #c2d500;
         }
       }
     }
@@ -130,7 +130,7 @@ export const SideNavContainer = styled.div.attrs({ className: 'sidenav__containe
           &:hover {
             > a {
               &:after {
-                color: rgb(147, 171, 0);
+                color: rgb(190, 191, 0);
               }
             }
           }

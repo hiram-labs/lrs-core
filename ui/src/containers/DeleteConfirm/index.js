@@ -67,7 +67,7 @@ class DeleteConfirm extends Component {
                 </div>
 
                 <div className="modal-footer" style={{ textAlign: 'center' }}>
-                  <a onClick={this.onClick.bind(null)} className="btn btn-primary btn-sm">
+                  <a onClick={this.onClick.bind(null)} className="btn btn-danger btn-sm">
                     <i className="icon ion-checkmark" /> Confirm
                   </a>
                   <a onClick={onClickClose.bind(null)} className="btn btn-primary btn-sm">

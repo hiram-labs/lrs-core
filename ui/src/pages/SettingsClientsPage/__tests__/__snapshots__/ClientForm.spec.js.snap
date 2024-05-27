@@ -350,7 +350,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
       className="form-group"
     >
       <label
-        className="sc-bdVaJa eIbCnh"
+        className="sc-bdVaJa fZlUxC"
         data-react-toolbox="checkbox"
       >
         <input
@@ -433,7 +433,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
         Overall Scopes
       </label>
       <label
-        className="sc-bdVaJa eIbCnh"
+        className="sc-bdVaJa fZlUxC"
         data-react-toolbox="checkbox"
       >
         <input
@@ -455,7 +455,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
         </span>
       </label>
       <label
-        className="sc-bdVaJa eIbCnh"
+        className="sc-bdVaJa fZlUxC"
         data-react-toolbox="checkbox"
       >
         <input
@@ -489,7 +489,7 @@ exports[`ClientForm ClientForm renders correctly 1`] = `
     >
       <div>
         <div
-          className="sc-bwzfXH EFIjy"
+          className="sc-bwzfXH fWLsLj"
           data-react-toolbox="dropdown"
           onBlur={[Function]}
           onFocus={[Function]}

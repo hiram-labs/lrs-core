@@ -9,8 +9,8 @@ const rippleClassName = 'ripple';
 const LLCheckbox = styled(Checkbox)`
   && {
     .${checkClassName}.${checkedClassName}, .${rippleClassName} {
-      background-color: rgb(151, 193, 31);
-      border-color: rgb(151, 193, 31);
+      background-color: rgb(194, 213, 0);
+      border-color: rgb(194, 213, 0);
     }
   }
 `;

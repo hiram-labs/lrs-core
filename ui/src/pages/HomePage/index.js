@@ -25,14 +25,14 @@ import { withModel, withSchema } from 'ui/utils/hocs';
 import Spinner from 'ui/components/Spinner';
 import FullPageBackground from 'ui/components/FullPageBackground';
 import AuthContainer from 'ui/containers/AuthContainer';
-import smallLogo from 'ui/static/smallLogo.png';
+import blankImage from 'ui/static/blankImage.png';
 import OrgMemberButton from 'ui/containers/OrgMemberButton';
 import { SITE_SETTINGS_ID } from 'lib/constants/siteSettings';
 import Register from './Register';
 
 const Underline = styled.div`
   height: 0;
-  border-bottom: 2px solid #7fba5f;
+  border-bottom: 2px solid #aace40;
   width: 250px;
   margin: 0 auto;
 `;
@@ -138,7 +138,7 @@ class Home extends Component {
             selectable
             ripple
             onClick={this.onClickOrgLogin.bind(null, organisation.get('_id'))}
-            avatar={organisation.get('logoPath') ? organisation.get('logoPath') : smallLogo}
+            avatar={organisation.get('logoPath') ? organisation.get('logoPath') : blankImage}
             caption={name}
             rightActions={rightActions}
           />

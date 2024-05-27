@@ -29,7 +29,7 @@ const getSavingStageColor = (savingStageClassName) => {
     case 'completed':
       return '#3ecb7a';
     default:
-      return 'rgb(151, 193, 31)';
+      return 'rgb(194, 213, 0)';
   }
 };
 

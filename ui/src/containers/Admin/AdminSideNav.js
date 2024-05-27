@@ -8,7 +8,7 @@ import {
   activeLinkClassName,
   OrgAvatar
 } from 'ui/containers/SideNav/styled';
-import DEFAULT_LOGO from 'ui/static/logos/default/default.gif';
+import logoPartial from 'ui/static/logoPartial.png';
 
 const renderLink = (activeClass, routeName, text) => (
   <li>
@@ -25,7 +25,7 @@ const AdminSideNav = () => {
     <SideNavContainer>
       <SideNavHeader>
         <OrgAvatar>
-          <img alt="logo" src={DEFAULT_LOGO} />
+          <img alt="logo" src={logoPartial} />
         </OrgAvatar>
         <div className="media-body">
           <div style={{ textAlign: 'center' }}>Site Settings</div>

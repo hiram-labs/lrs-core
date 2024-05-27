@@ -8,7 +8,7 @@ const selectedClassName = 'selected';
 const StyledDropdown = styled(Dropdown)`
   .${valuesClassName} {
     .${selectedClassName} {
-      color: rgb(151, 193, 31);
+      color: rgb(194, 213, 0);
     }
   }
 `;
