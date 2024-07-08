@@ -39,7 +39,7 @@ export default () => {
             cb();
           });
         },
-        () => !latestResult,
+        async () => !latestResult,
         () => {
           currentlyWorking = false;
         }
