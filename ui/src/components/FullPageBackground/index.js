@@ -87,7 +87,7 @@ const FullPageBackground = ({ version, children, width = 800 }) => (
         &copy; {new Date().getFullYear()}&nbsp;
         <a
           href="https://www.v360energy.com"
-          title="v360energy - xrtemis platform"
+          title="v360energy - skillspacexr platform"
           target="_blank"
           rel="noopener noreferrer"
         >
